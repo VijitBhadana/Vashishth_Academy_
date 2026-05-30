@@ -14,6 +14,16 @@ import ScrollTop from "./components/ScrollTop";
 import AnnouncementPage from "./components/AnnouncementPage";
 import Footer from "./components/Footer";
 import VideosPage from "./components/Videospage";
+import CoachingForIASExam from "./components/CoachingForIASExam";
+import CoachingForPCSExam from "./components/CoachingForPCSExam";
+import CoachingForNDAExam from "./components/CoachingForNDAExam";
+import CoachingForCDSExam from "./components/CoachingForCDSExam";
+import CoachingForSSCExam from "./components/CoachingForSSCExam";
+import InterviewDiscussions from "./components/InterviewDiscussions";
+import GeneralStudies from "./components/GeneralStudies";
+import ReferenceBooks from "./components/ReferenceBooks";
+import CurrentAffairs from "./components/CurrentAffairs";
+import MonthlyMagazines from "./components/MonthlyMagazines";
 
 export default function App() {
   const [modalId, setModalId] = useState(null);
@@ -24,22 +34,27 @@ export default function App() {
   };
 
   const handleNavigate = (sub) => {
-    if (sub === "About Vashishth Academy") {
-      setPage("about");
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    } else if (sub === "Success Stories") {
-      setPage("success");
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    } else if (sub === "Announcement") {
-      setPage("announcement");
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    } else if (sub === "Videos") {
-      setPage("videos");
+    const pageMap = {
+      "About Vashishth Academy": "about",
+      "Success Stories":         "success",
+      "Announcement":            "announcement",
+      "Videos":                  "videos",
+      "Coaching for IAS Exam":   "ias",
+      "Coaching for PCS Exam":   "pcs",
+      "Coaching for NDA Exam":   "nda",
+      "Coaching for CDS Exam":   "cds",
+      "Coaching for SSC Exam":   "ssc",
+      "Interview Discussions":   "interview",
+      "General Studies":         "generalstudies",
+      "Reference Books":         "referencebooks",
+      "Current Affairs":         "currentaffairs",
+      "Monthly Magazines":       "magazines",
+    };
+    const target = pageMap[sub];
+    if (target) {
+      setPage(target);
       window.scrollTo({ top: 0, behavior: "smooth" });
     }
-    // Future pages yahan add karo:
-    // else if (sub === "UPSC Foundation") setPage("upsc");
-    // else if (sub === "Our gallery") setPage("gallery");
   };
 
   const goHome = () => {
@@ -47,31 +62,42 @@ export default function App() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
+  const renderPage = () => {
+    switch (page) {
+      case "about":          return <AboutPage onBack={goHome} />;
+      case "success":        return <SuccessStories onBack={goHome} />;
+      case "announcement":   return <AnnouncementPage onBack={goHome} />;
+      case "videos":         return <VideosPage onBack={goHome} />;
+      case "ias":            return <CoachingForIASExam />;
+      case "pcs":            return <CoachingForPCSExam />;
+      case "nda":            return <CoachingForNDAExam />;
+      case "cds":            return <CoachingForCDSExam />;
+      case "ssc":            return <CoachingForSSCExam />;
+      case "interview":      return <InterviewDiscussions />;
+      case "generalstudies": return <GeneralStudies />;
+      case "referencebooks": return <ReferenceBooks />;
+      case "currentaffairs": return <CurrentAffairs />;
+      case "magazines":      return <MonthlyMagazines />;
+      default:
+        return (
+          <>
+            <HeroCarousel />
+            <CoursesSection onOpenModal={setModalId} />
+            <ToppersCoverflow />
+            <StudyMaterials />
+            <QueryFormSection />
+            <Testimonials />
+            <ContactSection />
+            <Modal id={modalId} onClose={() => setModalId(null)} />
+          </>
+        );
+    }
+  };
+
   return (
     <div style={{ fontFamily: "'Hind',sans-serif", background: "#f0f4fa", minHeight: "100vh" }}>
       <Navbar onContact={scrollToContact} onNavigate={handleNavigate} />
-
-      {page === "about" ? (
-        <AboutPage onBack={goHome} />
-      ) : page === "success" ? (
-        <SuccessStories onBack={goHome} />
-      ) : page === "announcement" ? (
-        <AnnouncementPage onBack={goHome} />
-      ) : page === "videos" ? (
-        <VideosPage onBack={goHome} />
-      ) : (
-        <>
-          <HeroCarousel />
-          <CoursesSection onOpenModal={setModalId} />
-          <ToppersCoverflow />
-          <StudyMaterials />
-          <QueryFormSection />
-          <Testimonials />
-          <ContactSection />
-          <Modal id={modalId} onClose={() => setModalId(null)} />
-        </>
-      )}
-
+      {renderPage()}
       <ScrollTop />
       <Footer />
     </div>

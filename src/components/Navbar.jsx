@@ -4,9 +4,9 @@ import { C } from "../data/data";
 
 const navItems = [
   { label: "About Us",       items: ["About Vashishth Academy","Success Stories"] },
-  { label: "Our Courses",    items: ["UPSC Foundation", "PPSC Coaching", "IAS / IPS Batch", "Online Courses", "Test Series"] },
-  { label: "How to Prepare", items: ["Study Plan", "Recommended Books", "Syllabus Guide", "Interview Tips"] },
-  { label: "Daily Updates",  items: ["Current Affairs", "News Analysis", "Editorials"] },
+  { label: "Our Courses",    items: ["Coaching for IAS Exam", "Coaching for PCS Exam", "Coaching for NDA Exam", "Coaching for CDS Exam", "Coaching for SSC Exam","Interview Discussions"] },
+  { label: "How to Prepare", items: ["General Studies", "Reference Books"] },
+  { label: "Daily Updates",  items: ["Current Affairs","Monthly Magazines"] },
   { label: "Media",          items: ["Videos", "Our gallery", "Math Topic Videos"] },
   { label: "Announcement",   items: [], direct: true },
 ];
