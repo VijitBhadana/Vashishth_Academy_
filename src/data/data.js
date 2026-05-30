@@ -16,15 +16,82 @@ export const C = {
 //   { tag: "Admissions Open", title: "Shape Your Future\nWith Us", sub: "Limited seats — secure your spot at Vashishth IAS Academy today", btn: "Apply Now", grad: "linear-gradient(135deg,#5c1a3a,#e84118)" },
 // ];
 
+// export const slides = [
+//   { tag: "UPSC 2025", title: "Begin Your IAS\nJourney Today", sub: "India's most trusted civil services coaching in Ludhiana", btn: "Explore Courses", grad: "linear-gradient(135deg,#0d2b5e,#1a6b8a)", image: "/src/assets/hero1.png" },
+//   { tag: "New Batch", title: "PPSC Foundation\nBatch 2025", sub: "Comprehensive coaching for Punjab Public Service Commission", btn: "Register Now", grad: "linear-gradient(135deg,#7b1a1a,#c0392b)", image: "/src/assets/hero2.png" },
+//   { tag: "Daily Current Affairs", title: "Stay Ahead with\nFree Live Classes", sub: "Join thousands of aspirants learning every day, live", btn: "Join Free", grad: "linear-gradient(135deg,#1a5c1a,#2e7d32)", image: "/src/assets/hero3.png" },
+//   { tag: "Test Series", title: "Mock Tests &\nPerformance Analysis", sub: "Sharpen your exam strategy with our expert-designed test series", btn: "Start Practicing", grad: "linear-gradient(135deg,#4a1a6b,#7b2d8b)", image: "/src/assets/hero4.png" },
+//   { tag: "IPS Coaching", title: "Your Dream of\nIPS Starts Here", sub: "Dedicated IPS track with experienced mentors and study material", btn: "Learn More", grad: "linear-gradient(135deg,#1a4a6b,#e84118)", image: "/src/assets/hero5.png" },
+//   { tag: "NDA Coaching", title: "Serve The Nation\nWith Pride", sub: "Expert NDA coaching with physical and written exam preparation", btn: "Enquire Now", grad: "linear-gradient(135deg,#6b4a1a,#f9a825)", image: "/src/assets/hero6.png" },
+//   { tag: "Online Batch", title: "Learn From Home\nWith Live Classes", sub: "Full-featured online batches with recorded backup and doubt sessions", btn: "Join Online", grad: "linear-gradient(135deg,#1a3a6b,#0d5e4a)", image: "/src/assets/hero7.png" },
+//   { tag: "Admissions Open", title: "Shape Your Future\nWith Us", sub: "Limited seats — secure your spot at Vashishth IAS Academy today", btn: "Apply Now", grad: "linear-gradient(135deg,#5c1a3a,#e84118)", image: "/src/assets/hero8.png" },
+// ];
+
 export const slides = [
-  { tag: "UPSC 2025", title: "Begin Your IAS\nJourney Today", sub: "India's most trusted civil services coaching in Ludhiana", btn: "Explore Courses", grad: "linear-gradient(135deg,#0d2b5e,#1a6b8a)", image: "/src/assets/hero1.png" },
-  { tag: "New Batch", title: "PPSC Foundation\nBatch 2025", sub: "Comprehensive coaching for Punjab Public Service Commission", btn: "Register Now", grad: "linear-gradient(135deg,#7b1a1a,#c0392b)", image: "/src/assets/hero2.png" },
-  { tag: "Daily Current Affairs", title: "Stay Ahead with\nFree Live Classes", sub: "Join thousands of aspirants learning every day, live", btn: "Join Free", grad: "linear-gradient(135deg,#1a5c1a,#2e7d32)", image: "/src/assets/hero3.png" },
-  { tag: "Test Series", title: "Mock Tests &\nPerformance Analysis", sub: "Sharpen your exam strategy with our expert-designed test series", btn: "Start Practicing", grad: "linear-gradient(135deg,#4a1a6b,#7b2d8b)", image: "/src/assets/hero4.png" },
-  { tag: "IPS Coaching", title: "Your Dream of\nIPS Starts Here", sub: "Dedicated IPS track with experienced mentors and study material", btn: "Learn More", grad: "linear-gradient(135deg,#1a4a6b,#e84118)", image: "/src/assets/hero5.png" },
-  { tag: "NDA Coaching", title: "Serve The Nation\nWith Pride", sub: "Expert NDA coaching with physical and written exam preparation", btn: "Enquire Now", grad: "linear-gradient(135deg,#6b4a1a,#f9a825)", image: "/src/assets/hero6.png" },
-  { tag: "Online Batch", title: "Learn From Home\nWith Live Classes", sub: "Full-featured online batches with recorded backup and doubt sessions", btn: "Join Online", grad: "linear-gradient(135deg,#1a3a6b,#0d5e4a)", image: "/src/assets/hero7.png" },
-  { tag: "Admissions Open", title: "Shape Your Future\nWith Us", sub: "Limited seats — secure your spot at Vashishth IAS Academy today", btn: "Apply Now", grad: "linear-gradient(135deg,#5c1a3a,#e84118)", image: "/src/assets/hero8.png" },
+  {
+    tag: "UPSC 2025",
+    title: "Begin Your IAS\nJourney Today",
+    sub: "India's most trusted civil services coaching in Ludhiana",
+    btn: "Explore Courses",
+    grad: "linear-gradient(135deg,#0d2b5e,#1a6b8a)",
+    image: "/assets/hero1.png",
+  },
+  {
+    tag: "New Batch",
+    title: "PPSC Foundation\nBatch 2025",
+    sub: "Comprehensive coaching for Punjab Public Service Commission",
+    btn: "Register Now",
+    grad: "linear-gradient(135deg,#7b1a1a,#c0392b)",
+    image: "/assets/hero2.png",
+  },
+  {
+    tag: "Daily Current Affairs",
+    title: "Stay Ahead with\nFree Live Classes",
+    sub: "Join thousands of aspirants learning every day, live",
+    btn: "Join Free",
+    grad: "linear-gradient(135deg,#1a5c1a,#2e7d32)",
+    image: "/assets/hero3.png",
+  },
+  {
+    tag: "Test Series",
+    title: "Mock Tests &\nPerformance Analysis",
+    sub: "Sharpen your exam strategy with our expert-designed test series",
+    btn: "Start Practicing",
+    grad: "linear-gradient(135deg,#4a1a6b,#7b2d8b)",
+    image: "/assets/hero4.png",
+  },
+  {
+    tag: "IPS Coaching",
+    title: "Your Dream of\nIPS Starts Here",
+    sub: "Dedicated IPS track with experienced mentors and study material",
+    btn: "Learn More",
+    grad: "linear-gradient(135deg,#1a4a6b,#e84118)",
+    image: "/assets/hero5.png",
+  },
+  {
+    tag: "NDA Coaching",
+    title: "Serve The Nation\nWith Pride",
+    sub: "Expert NDA coaching with physical and written exam preparation",
+    btn: "Enquire Now",
+    grad: "linear-gradient(135deg,#6b4a1a,#f9a825)",
+    image: "/assets/hero6.png",
+  },
+  {
+    tag: "Online Batch",
+    title: "Learn From Home\nWith Live Classes",
+    sub: "Full-featured online batches with recorded backup and doubt sessions",
+    btn: "Join Online",
+    grad: "linear-gradient(135deg,#1a3a6b,#0d5e4a)",
+    image: "/assets/hero7.png",
+  },
+  {
+    tag: "Admissions Open",
+    title: "Shape Your Future\nWith Us",
+    sub: "Limited seats — secure your spot at Vashishth IAS Academy today",
+    btn: "Apply Now",
+    grad: "linear-gradient(135deg,#5c1a3a,#e84118)",
+    image: "/assets/hero8.png",
+  },
 ];
 
 export const courses = [
