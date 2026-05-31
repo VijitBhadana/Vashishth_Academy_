@@ -1,4 +1,5 @@
 
+
 // import { useState } from "react";
 
 // /* ─── Color tokens ─── */
@@ -113,41 +114,35 @@
 // function SectionTitle({ children, sub }) {
 //   return (
 //     <div style={{ textAlign: "center", marginBottom: 42 }}>
-//       <h2
-//         style={{
-//           fontFamily: "'Rajdhani',sans-serif",
-//           fontSize: "clamp(24px, 4vw, 36px)",
-//           fontWeight: 700,
-//           color: C.navy,
-//           letterSpacing: ".02em",
-//           display: "inline-block",
-//           position: "relative",
-//           marginBottom: 10,
-//         }}
-//       >
+//       <h2 style={{
+//         fontFamily: "'Rajdhani',sans-serif",
+//         fontSize: "clamp(24px, 4vw, 36px)",
+//         fontWeight: 700,
+//         color: C.navy,
+//         letterSpacing: ".02em",
+//         display: "inline-block",
+//         position: "relative",
+//         marginBottom: 10,
+//       }}>
 //         {children}
-//         <span
-//           style={{
-//             display: "block",
-//             margin: "8px auto 0",
-//             width: 60,
-//             height: 3,
-//             background: `linear-gradient(90deg,${C.red},${C.gold})`,
-//             borderRadius: 2,
-//           }}
-//         />
+//         <span style={{
+//           display: "block",
+//           margin: "8px auto 0",
+//           width: 60,
+//           height: 3,
+//           background: `linear-gradient(90deg,${C.red},${C.gold})`,
+//           borderRadius: 2,
+//         }} />
 //       </h2>
 //       {sub && (
-//         <p
-//           style={{
-//             fontSize: "clamp(12px, 1.5vw, 14px)",
-//             color: "#4a5e7a",
-//             maxWidth: 680,
-//             margin: "12px auto 0",
-//             lineHeight: 1.6,
-//             padding: "0 16px",
-//           }}
-//         >
+//         <p style={{
+//           fontSize: "clamp(12px, 1.5vw, 14px)",
+//           color: "#4a5e7a",
+//           maxWidth: 680,
+//           margin: "12px auto 0",
+//           lineHeight: 1.6,
+//           padding: "0 16px",
+//         }}>
 //           {sub}
 //         </p>
 //       )}
@@ -163,17 +158,12 @@
 //   const m = modalContent[id];
 //   return (
 //     <div
-//       onClick={(e) => {
-//         if (e.target === e.currentTarget) onClose();
-//       }}
+//       onClick={(e) => { if (e.target === e.currentTarget) onClose(); }}
 //       style={{
-//         position: "fixed",
-//         inset: 0,
+//         position: "fixed", inset: 0,
 //         background: "rgba(10,24,52,.65)",
 //         zIndex: 1000,
-//         display: "flex",
-//         alignItems: "center",
-//         justifyContent: "center",
+//         display: "flex", alignItems: "center", justifyContent: "center",
 //         backdropFilter: "blur(3px)",
 //         padding: "16px",
 //       }}
@@ -200,90 +190,44 @@
 //           .modal-inner li,.modal-inner p,.feature-item{font-size:12px}
 //         }
 //       `}</style>
-//       <div
-//         style={{
-//           background: "#fff",
-//           borderRadius: 16,
-//           width: "100%",
-//           maxWidth: 820,
-//           maxHeight: "90vh",
-//           overflow: "hidden",
-//           display: "flex",
-//           flexDirection: "column",
-//           boxShadow: "0 24px 64px rgba(10,24,52,.3)",
-//           animation: "modalIn .3s cubic-bezier(.34,1.4,.64,1)",
-//         }}
-//       >
-//         <div
-//           style={{
-//             background: "linear-gradient(135deg,#1a3a6b,#0d5e8a)",
-//             padding: "20px 24px 16px",
-//             flexShrink: 0,
-//             display: "flex",
-//             alignItems: "flex-start",
-//             justifyContent: "space-between",
-//             gap: 16,
-//           }}
-//         >
+//       <div style={{
+//         background: "#fff", borderRadius: 16,
+//         width: "100%", maxWidth: 820, maxHeight: "90vh",
+//         overflow: "hidden", display: "flex", flexDirection: "column",
+//         boxShadow: "0 24px 64px rgba(10,24,52,.3)",
+//         animation: "modalIn .3s cubic-bezier(.34,1.4,.64,1)",
+//       }}>
+//         <div style={{
+//           background: "linear-gradient(135deg,#1a3a6b,#0d5e8a)",
+//           padding: "20px 24px 16px", flexShrink: 0,
+//           display: "flex", alignItems: "flex-start",
+//           justifyContent: "space-between", gap: 16,
+//         }}>
 //           <div>
-//             <div
-//               style={{
-//                 display: "inline-block",
-//                 background: C.red,
-//                 color: "#fff",
-//                 fontSize: 10,
-//                 fontWeight: 700,
-//                 letterSpacing: ".12em",
-//                 textTransform: "uppercase",
-//                 padding: "3px 10px",
-//                 borderRadius: 3,
-//                 marginBottom: 8,
-//               }}
-//             >
-//               {m.tag}
-//             </div>
-//             <div
-//               style={{
-//                 fontFamily: "'Rajdhani',sans-serif",
-//                 fontSize: "clamp(18px, 3vw, 26px)",
-//                 fontWeight: 700,
-//                 color: "#fff",
-//                 lineHeight: 1.15,
-//                 letterSpacing: ".02em",
-//               }}
-//             >
-//               {m.title}
-//             </div>
+//             <div style={{
+//               display: "inline-block", background: C.red, color: "#fff",
+//               fontSize: 10, fontWeight: 700, letterSpacing: ".12em",
+//               textTransform: "uppercase", padding: "3px 10px",
+//               borderRadius: 3, marginBottom: 8,
+//             }}>{m.tag}</div>
+//             <div style={{
+//               fontFamily: "'Rajdhani',sans-serif",
+//               fontSize: "clamp(18px, 3vw, 26px)",
+//               fontWeight: 700, color: "#fff",
+//               lineHeight: 1.15, letterSpacing: ".02em",
+//             }}>{m.title}</div>
 //           </div>
-//           <button
-//             onClick={onClose}
-//             style={{
-//               background: "rgba(255,255,255,.15)",
-//               border: "none",
-//               color: "#fff",
-//               width: 34,
-//               height: 34,
-//               borderRadius: "50%",
-//               fontSize: 18,
-//               cursor: "pointer",
-//               display: "flex",
-//               alignItems: "center",
-//               justifyContent: "center",
-//               flexShrink: 0,
-//             }}
-//           >
-//             ✕
-//           </button>
+//           <button onClick={onClose} style={{
+//             background: "rgba(255,255,255,.15)", border: "none",
+//             color: "#fff", width: 34, height: 34, borderRadius: "50%",
+//             fontSize: 18, cursor: "pointer",
+//             display: "flex", alignItems: "center", justifyContent: "center",
+//             flexShrink: 0,
+//           }}>✕</button>
 //         </div>
-
 //         <div
 //           className="modal-inner"
-//           style={{
-//             overflowY: "auto",
-//             padding: "24px 28px 28px",
-//             flex: 1,
-//             fontFamily: "'Hind',sans-serif",
-//           }}
+//           style={{ overflowY: "auto", padding: "24px 28px 28px", flex: 1, fontFamily: "'Hind',sans-serif" }}
 //           dangerouslySetInnerHTML={{ __html: m.body }}
 //         />
 //       </div>
@@ -293,7 +237,8 @@
 
 // /* ══════════════════════════════════════════
 //    SINGLE COURSE CARD
-//    ✅ FIX: har card ka apna isolated hover state
+//    ✅ KEY FIX: har card ka apna useState
+//    ✅ KEY FIX: card height auto — grid stretch nahi karegi
 // ══════════════════════════════════════════ */
 // function CourseCard({ c, onKnowMore }) {
 //   const [hovered, setHovered] = useState(false);
@@ -309,164 +254,125 @@
 //         boxShadow: hovered
 //           ? "0 12px 36px rgba(26,58,107,.18)"
 //           : "0 2px 16px rgba(26,58,107,.08)",
-//         transform: hovered ? "translateY(-6px)" : "none",
+//         transform: hovered ? "translateY(-6px)" : "translateY(0)",
 //         transition: "transform .35s ease, box-shadow .35s ease",
 //         cursor: "pointer",
 //         position: "relative",
-//         display: "flex",
-//         flexDirection: "column",
+//         /* ✅ CRITICAL FIX: height:auto so only THIS card grows */
+//         height: "auto",
+//         alignSelf: "start",
 //       }}
 //     >
-//       {/* Image area */}
-//       <div
-//         style={{
-//           width: "100%",
-//           height: 180,
-//           overflow: "hidden",
-//           position: "relative",
-//           background: `linear-gradient(135deg,${C.navy},#0d5e8a)`,
-//           display: "flex",
-//           alignItems: "center",
-//           justifyContent: "center",
-//           flexShrink: 0,
-//         }}
-//       >
-//         <span
-//           style={{
-//             fontFamily: "'Rajdhani',sans-serif",
-//             fontSize: "clamp(40px, 6vw, 64px)",
-//             fontWeight: 700,
-//             color: "rgba(255,255,255,.15)",
-//             userSelect: "none",
-//           }}
-//         >
-//           {c.tag}
-//         </span>
+//       {/* Image area — fixed height, never changes */}
+//       <div style={{
+//         width: "100%",
+//         height: 180,
+//         position: "relative",
+//         background: `linear-gradient(135deg,${C.navy},#0d5e8a)`,
+//         display: "flex",
+//         alignItems: "center",
+//         justifyContent: "center",
+//         overflow: "hidden",
+//         flexShrink: 0,
+//       }}>
+//         <span style={{
+//           fontFamily: "'Rajdhani',sans-serif",
+//           fontSize: "clamp(40px, 6vw, 64px)",
+//           fontWeight: 700,
+//           color: "rgba(255,255,255,.15)",
+//           userSelect: "none",
+//         }}>{c.tag}</span>
 
-//         <div
-//           style={{
-//             position: "absolute",
-//             top: 12,
-//             left: 12,
-//             background: C.red,
-//             color: "#fff",
-//             fontSize: 10,
-//             fontWeight: 700,
-//             letterSpacing: ".1em",
-//             textTransform: "uppercase",
-//             padding: "3px 10px",
-//             borderRadius: 3,
-//           }}
-//         >
-//           {c.tag}
-//         </div>
+//         {/* Badge */}
+//         <div style={{
+//           position: "absolute", top: 12, left: 12,
+//           background: C.red, color: "#fff",
+//           fontSize: 10, fontWeight: 700,
+//           letterSpacing: ".1em", textTransform: "uppercase",
+//           padding: "3px 10px", borderRadius: 3,
+//         }}>{c.tag}</div>
 
-//         <div
-//           style={{
-//             position: "absolute",
-//             inset: 0,
-//             background: hovered
-//               ? "linear-gradient(180deg,transparent 40%,rgba(26,58,107,.55) 100%)"
-//               : "transparent",
-//             transition: "background .35s",
-//           }}
-//         />
+//         {/* Hover overlay */}
+//         <div style={{
+//           position: "absolute", inset: 0,
+//           background: hovered
+//             ? "linear-gradient(180deg,transparent 40%,rgba(26,58,107,.55) 100%)"
+//             : "transparent",
+//           transition: "background .35s",
+//         }} />
 //       </div>
 
-//       {/* Text content */}
-//       <div
-//         style={{
-//           padding: "18px 20px 20px",
-//           flex: 1,
-//           display: "flex",
-//           flexDirection: "column",
-//         }}
-//       >
+//       {/* Text content — grows only when hovered */}
+//       <div style={{ padding: "18px 20px 20px" }}>
+
+//         {/* Title */}
 //         <div style={{ position: "relative", display: "inline-block" }}>
-//           <h3
-//             style={{
-//               fontFamily: "'Rajdhani',sans-serif",
-//               fontSize: "clamp(15px, 2vw, 19px)",
-//               fontWeight: 700,
-//               color: C.navy,
-//               lineHeight: 1.2,
-//               margin: 0,
-//             }}
-//           >
-//             {c.title}
-//           </h3>
-//           <span
-//             style={{
-//               display: "block",
-//               width: hovered ? "100%" : 0,
-//               height: 2,
-//               background: `linear-gradient(90deg,${C.red},${C.gold})`,
-//               borderRadius: 2,
-//               marginTop: 5,
-//               transition: "width .35s ease",
-//             }}
-//           />
+//           <h3 style={{
+//             fontFamily: "'Rajdhani',sans-serif",
+//             fontSize: "clamp(15px, 2vw, 19px)",
+//             fontWeight: 700, color: C.navy,
+//             lineHeight: 1.2, margin: 0,
+//           }}>{c.title}</h3>
+//           {/* Animated underline */}
+//           <span style={{
+//             display: "block",
+//             width: hovered ? "100%" : 0,
+//             height: 2,
+//             background: `linear-gradient(90deg,${C.red},${C.gold})`,
+//             borderRadius: 2,
+//             marginTop: 5,
+//             transition: "width .35s ease",
+//           }} />
 //         </div>
 
-//         <p
-//           style={{
+//         {/* Description — collapses to 0 when not hovered */}
+//         <div style={{
+//           overflow: "hidden",
+//           maxHeight: hovered ? "200px" : "0px",
+//           opacity: hovered ? 1 : 0,
+//           transition: "max-height .4s ease, opacity .35s ease",
+//         }}>
+//           <p style={{
 //             fontSize: "clamp(11px, 1.3vw, 13px)",
 //             color: "#4a5e7a",
 //             lineHeight: 1.65,
-//             maxHeight: hovered ? 200 : 0,
-//             opacity: hovered ? 1 : 0,
-//             margin: hovered ? "10px 0 0" : "0",
-//             transition:
-//               "max-height .45s ease, opacity .4s ease, margin .3s ease",
-//             overflow: "hidden",
-//           }}
-//         >
-//           {c.desc}
-//         </p>
+//             margin: "10px 0 0",
+//           }}>{c.desc}</p>
 
-//         <button
-//           onClick={(e) => {
-//             e.stopPropagation();
-//             onKnowMore(c.id);
-//           }}
-//           style={{
-//             display: "inline-flex",
-//             alignItems: "center",
-//             gap: 6,
-//             fontSize: "clamp(10px, 1.2vw, 13px)",
-//             fontWeight: 700,
-//             color: C.red,
-//             letterSpacing: ".08em",
-//             textTransform: "uppercase",
-//             maxHeight: hovered ? 40 : 0,
-//             opacity: hovered ? 1 : 0,
-//             marginTop: hovered ? 14 : 0,
-//             transition:
-//               "max-height .4s ease, opacity .35s ease, margin-top .3s ease",
-//             background: "none",
-//             border: "none",
-//             cursor: "pointer",
-//             fontFamily: "'Hind',sans-serif",
-//             padding: 0,
-//           }}
-//         >
-//           Know More <span style={{ fontSize: 16 }}>→</span>
-//         </button>
+//           {/* Know More button */}
+//           <button
+//             onClick={(e) => { e.stopPropagation(); onKnowMore(c.id); }}
+//             style={{
+//               display: "inline-flex",
+//               alignItems: "center",
+//               gap: 6,
+//               fontSize: "clamp(10px, 1.2vw, 13px)",
+//               fontWeight: 700,
+//               color: C.red,
+//               letterSpacing: ".08em",
+//               textTransform: "uppercase",
+//               marginTop: 14,
+//               background: "none",
+//               border: "none",
+//               cursor: "pointer",
+//               fontFamily: "'Hind',sans-serif",
+//               padding: 0,
+//             }}
+//           >
+//             Know More <span style={{ fontSize: 16 }}>→</span>
+//           </button>
+//         </div>
 //       </div>
 
-//       {/* Bottom sweep */}
-//       <span
-//         style={{
-//           position: "absolute",
-//           bottom: 0,
-//           left: 0,
-//           width: hovered ? "100%" : 0,
-//           height: 3,
-//           background: `linear-gradient(90deg,${C.navy},${C.red})`,
-//           transition: "width .4s ease",
-//           zIndex: 3,
-//         }}
-//       />
+//       {/* Bottom sweep line */}
+//       <span style={{
+//         position: "absolute", bottom: 0, left: 0,
+//         width: hovered ? "100%" : 0,
+//         height: 3,
+//         background: `linear-gradient(90deg,${C.navy},${C.red})`,
+//         transition: "width .4s ease",
+//         zIndex: 3,
+//       }} />
 //     </div>
 //   );
 // }
@@ -482,12 +388,14 @@
 //       <style>{`
 //         @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Hind:wght@400;500;600&display=swap');
 
+//         /* ✅ align-items:start = cards don't stretch to match tallest sibling */
 //         .courses-grid {
 //           display: grid;
 //           grid-template-columns: repeat(3, 1fr);
 //           gap: 24px;
 //           max-width: 1100px;
 //           margin: 0 auto;
+//           align-items: start;
 //         }
 //         @media (max-width: 900px) {
 //           .courses-grid { grid-template-columns: repeat(2, 1fr); gap: 18px; }
@@ -522,7 +430,10 @@
 // }
 
 
-import { useState } from "react";
+
+
+import { useState, useEffect, useRef } from "react";
+
 
 /* ─── Color tokens ─── */
 const C = {
@@ -902,9 +813,30 @@ function CourseCard({ c, onKnowMore }) {
 /* ══════════════════════════════════════════
    COURSES SECTION  (main export)
 ══════════════════════════════════════════ */
+
 export default function CoursesSection() {
   const [modalId, setModalId] = useState(null);
+ const sectionRef = useRef(null);
+  const [animateCards, setAnimateCards] = useState(false);
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setAnimateCards(true);
+        }
+      },
+      {
+        threshold: 0.2,
+      }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
   return (
     <>
       <style>{`
@@ -932,6 +864,7 @@ export default function CoursesSection() {
       `}</style>
 
       <section
+        ref={sectionRef}
         className="courses-section"
         style={{ background: C.bg, fontFamily: "'Hind',sans-serif" }}
       >
@@ -940,9 +873,29 @@ export default function CoursesSection() {
         </SectionTitle>
 
         <div className="courses-grid">
-          {courses.map((c) => (
-            <CourseCard key={c.id} c={c} onKnowMore={setModalId} />
-          ))}
+          {courses.map((c, index) => (
+  <div
+    key={c.id}
+    style={{
+      opacity: animateCards ? 1 : 0,
+
+      transform: animateCards
+        ? "translateX(0)"
+        : index < 3
+        ? "translateX(-250px)"
+        : "translateX(250px)",
+
+      transition: `
+        opacity 0.8s ease,
+        transform 0.9s cubic-bezier(.22,.61,.36,1)
+      `,
+
+      transitionDelay: `${index * 150}ms`,
+    }}
+  >
+    <CourseCard c={c} onKnowMore={setModalId} />
+  </div>
+))}
         </div>
       </section>
 

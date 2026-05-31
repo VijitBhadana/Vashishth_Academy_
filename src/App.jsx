@@ -1,4 +1,5 @@
 import { useState } from "react";
+
 import Navbar from "./components/Navbar";
 import SuccessStories from "./components/SuccessStories";
 import AboutPage from "./components/AboutPage";
@@ -96,6 +97,7 @@ export default function App() {
             <QueryFormSection />
             <Testimonials />
             <ContactSection />
+            
             <Modal id={modalId} onClose={() => setModalId(null)} />
           </>
         );
@@ -108,6 +110,7 @@ export default function App() {
       {renderPage()}
       <ScrollTop />
       <Footer />
+
     </div>
   );
 }

@@ -1,18 +1,41 @@
 
-import { useState, useEffect } from "react";
+
+
+import { useState, useEffect, useRef } from "react";
 import { C } from "../data/data";
 import { FaTrophy, FaChalkboardTeacher, FaBullseye, FaBook, FaMapMarkerAlt, FaLaptop } from "react-icons/fa";
+
 
 export default function QueryFormSection() {
   const [formData, setFormData] = useState({ name: "", phone: "", email: "", course: "", timing: "" });
   const [submitted, setSubmitted] = useState(false);
   const [width, setWidth] = useState(typeof window !== "undefined" ? window.innerWidth : 1200);
+const featuresRef = useRef(null);
+const [showFeatures, setShowFeatures] = useState(false);
 
   useEffect(() => {
     const handler = () => setWidth(window.innerWidth);
     window.addEventListener("resize", handler);
     return () => window.removeEventListener("resize", handler);
   }, []);
+  useEffect(() => {
+  const observer = new IntersectionObserver(
+    ([entry]) => {
+      if (entry.isIntersecting) {
+        setShowFeatures(true);
+      }
+    },
+    {
+      threshold: 0.25,
+    }
+  );
+
+  if (featuresRef.current) {
+    observer.observe(featuresRef.current);
+  }
+
+  return () => observer.disconnect();
+}, []);
 
   const isMobile = width < 640;
   const isTablet = width >= 640 && width < 1024;
@@ -125,22 +148,41 @@ export default function QueryFormSection() {
             }} />
             Why Vashishth IAS Academy Stands Out
           </div>
-
-          <div style={{
-            display: "grid",
-            gridTemplateColumns: isMobile ? "1fr" : isTablet ? "1fr 1fr" : "1fr",
-            gap: 14,
-          }}>
+<div
+  ref={featuresRef}
+  style={{
+    display: "grid",
+    gridTemplateColumns: isMobile ? "1fr" : isTablet ? "1fr 1fr" : "1fr",
+    gap: 14,
+  }}
+>
             {features.map((f, i) => (
-              <div key={i}
-                style={{
-                  background: "#fff", border: "1px solid #dde6f0", borderRadius: 10,
-                  padding: "16px 20px", display: "flex", alignItems: "flex-start", gap: 14,
-                  boxShadow: "0 2px 10px rgba(26,58,107,.06)",
-                  transition: "transform .25s,box-shadow .25s,border-color .25s", cursor: "default",
-                }}
-                onMouseEnter={e => { e.currentTarget.style.transform = "translateX(5px)"; e.currentTarget.style.borderColor = C.red; }}
-                onMouseLeave={e => { e.currentTarget.style.transform = ""; e.currentTarget.style.borderColor = "#dde6f0"; }}>
+             <div
+  key={i}
+  style={{
+    background: "#fff",
+    border: "1px solid #dde6f0",
+    borderRadius: 10,
+    padding: "16px 20px",
+    display: "flex",
+    alignItems: "flex-start",
+    gap: 14,
+    boxShadow: "0 2px 10px rgba(26,58,107,.06)",
+    cursor: "default",
+
+    opacity: showFeatures ? 1 : 0,
+    transform: showFeatures
+      ? "translateY(0px)"
+      : "translateY(-80px)",
+
+    transition: `
+      opacity 0.8s ease,
+      transform 0.8s cubic-bezier(.22,.61,.36,1)
+    `,
+
+    transitionDelay: `${i * 150}ms`,
+  }}
+>
 
                 <div style={{
                   width: 38, height: 38, borderRadius: "50%", flexShrink: 0,

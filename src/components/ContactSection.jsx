@@ -1,134 +1,6 @@
-// import { C } from "../data/data";
 
-// export default function ContactSection() {
-//   const quickLinks = ["About Us","Our Courses","Study Material","Test Series","Current Affairs","Admissions","Contact Us","Privacy Policy"];
-//   const courseLinks = ["UPSC CSE (IAS/IPS)","PPSC / Punjab PCS","IAS Foundation Batch","NDA Coaching","CDS Coaching","SSC CGL / CHSL"];
 
-//   return (
-//     <footer id="contact-us" style={{ background: "linear-gradient(180deg,#0d1f3c 0%,#0a1628 100%)", color: "#fff", fontFamily: "'Hind',sans-serif" }}>
-//       <div style={{ display: "grid", gridTemplateColumns: "1.4fr 1fr 1fr 1.3fr", gap: 40, padding: "50px 60px 36px" }}>
-
-//         {/* Col 1: Brand */}
-//         <div>
-//           <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 18 }}>
-//             <div style={{ width: 50, height: 50, borderRadius: "50%", background: C.navy, border: `2px solid ${C.red}`, display: "flex", alignItems: "center", justifyContent: "center" }}>
-//               <svg viewBox="0 0 28 28" fill="none" width="28" height="28">
-//                 <circle cx="14" cy="14" r="13" stroke="#f9a825" strokeWidth="1.5"/>
-//                 <path d="M14 4 L18 10 L14 8 L10 10 Z" fill="#f9a825"/>
-//                 <path d="M8 12 L14 8 L20 12 L20 22 L8 22 Z" fill="none" stroke="#fff" strokeWidth="1.2"/>
-//                 <path d="M11 22 L11 16 L14 14 L17 16 L17 22" fill="none" stroke="#fff" strokeWidth="1.2"/>
-//               </svg>
-//             </div>
-//             <div>
-//               <div style={{ fontFamily: "'Rajdhani',sans-serif", fontSize: 17, fontWeight: 700, color: "#fff", letterSpacing: ".04em", lineHeight: 1.1 }}>Vashishth IAS Academy</div>
-//               <div style={{ fontSize: 10, color: C.gold, letterSpacing: ".12em", textTransform: "uppercase", fontWeight: 600 }}>Ludhiana · Making Future</div>
-//             </div>
-//           </div>
-//           <p style={{ fontSize: 13, color: "rgba(255,255,255,.55)", lineHeight: 1.8, marginBottom: 20 }}>India's most trusted civil services coaching institute in Ludhiana, providing expert guidance for UPSC, PPSC, IAS, NDA, CDS and SSC examinations since 2009.</p>
-//           <div style={{ display: "flex", gap: 10 }}>
-//             {[
-//               { label: "Facebook",  href: "#", icon: "f",  bg: "#1877F2" },
-//               { label: "Instagram", href: "#", icon: "ig", bg: "linear-gradient(135deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888)" },
-//               { label: "YouTube",   href: "#", icon: "▶",  bg: "#FF0000" },
-//               { label: "Telegram",  href: "#", icon: "✈",  bg: "#0088CC" },
-//             ].map(s => (
-//               <a key={s.label} href={s.href} title={s.label}
-//                 style={{ width: 36, height: 36, borderRadius: 8, background: s.bg, display: "flex", alignItems: "center", justifyContent: "center", color: "#fff", fontSize: 13, fontWeight: 700, textDecoration: "none", transition: "transform .2s,opacity .2s", opacity: .85 }}
-//                 onMouseEnter={e => { e.currentTarget.style.transform = "translateY(-3px)"; e.currentTarget.style.opacity = "1"; }}
-//                 onMouseLeave={e => { e.currentTarget.style.transform = ""; e.currentTarget.style.opacity = ".85"; }}>
-//                 {s.icon}
-//               </a>
-//             ))}
-//           </div>
-//         </div>
-
-//         {/* Col 2: Quick Links */}
-//         <div>
-//           <FooterHeading>Quick Links</FooterHeading>
-//           <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: 8 }}>
-//             {quickLinks.map(l => (
-//               <li key={l}>
-//                 <a href="#" style={{ fontSize: 13, color: "rgba(255,255,255,.55)", textDecoration: "none", display: "flex", alignItems: "center", gap: 8, transition: "all .2s" }}
-//                   onMouseEnter={e => { e.currentTarget.style.color = C.gold; e.currentTarget.style.paddingLeft = "4px"; }}
-//                   onMouseLeave={e => { e.currentTarget.style.color = "rgba(255,255,255,.55)"; e.currentTarget.style.paddingLeft = "0"; }}>
-//                   <span style={{ color: C.red, fontSize: 10 }}>›</span> {l}
-//                 </a>
-//               </li>
-//             ))}
-//           </ul>
-//         </div>
-
-//         {/* Col 3: Courses */}
-//         <div>
-//           <FooterHeading>Our Courses</FooterHeading>
-//           <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: 8 }}>
-//             {courseLinks.map(l => (
-//               <li key={l}>
-//                 <a href="#" style={{ fontSize: 13, color: "rgba(255,255,255,.55)", textDecoration: "none", display: "flex", alignItems: "center", gap: 8, transition: "all .2s" }}
-//                   onMouseEnter={e => { e.currentTarget.style.color = C.gold; e.currentTarget.style.paddingLeft = "4px"; }}
-//                   onMouseLeave={e => { e.currentTarget.style.color = "rgba(255,255,255,.55)"; e.currentTarget.style.paddingLeft = "0"; }}>
-//                   <span style={{ color: C.red, fontSize: 10 }}>›</span> {l}
-//                 </a>
-//               </li>
-//             ))}
-//           </ul>
-//         </div>
-
-//         {/* Col 4: Contact */}
-//         <div>
-//           <FooterHeading>Contact Us</FooterHeading>
-//           <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
-//             {[
-//               { icon: "📍", label: "Address",       val: "268 A, 1st Floor, Krishna Mandir Road, Ludhiana." },
-//               { icon: "📞", label: "Phone",         val: "+91-94640-31200", href: "tel:+919464031200" },
-//               { icon: "✉️", label: "Email",         val: "info@vashishthacademy.com", href: "mailto:info@vashishthacademy.com" },
-//               { icon: "🕒", label: "Opening Hours", val: "Mon–Sat: 8:00 AM – 6:00 PM" },
-//             ].map(c => (
-//               <div key={c.label} style={{ display: "flex", alignItems: "flex-start", gap: 12 }}>
-//                 <div style={{ width: 34, height: 34, borderRadius: 8, flexShrink: 0, background: "rgba(232,65,24,.15)", border: "1px solid rgba(232,65,24,.3)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 14 }}>{c.icon}</div>
-//                 <div>
-//                   <div style={{ fontSize: 10, color: C.red, fontWeight: 700, letterSpacing: ".1em", textTransform: "uppercase", marginBottom: 2 }}>{c.label}</div>
-//                   {c.href
-//                     ? <a href={c.href} style={{ fontSize: 12.5, color: "rgba(255,255,255,.65)", textDecoration: "none" }}>{c.val}</a>
-//                     : <div style={{ fontSize: 12.5, color: "rgba(255,255,255,.65)", lineHeight: 1.6 }}>{c.val}</div>}
-//                 </div>
-//               </div>
-//             ))}
-//           </div>
-//         </div>
-//       </div>
-
-//       <div style={{ height: 1, background: "linear-gradient(90deg,transparent,rgba(255,255,255,.1) 20%,rgba(232,65,24,.4) 50%,rgba(255,255,255,.1) 80%,transparent)", margin: "0 60px" }} />
-
-//       <div style={{ padding: "14px 60px", display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: 12 }}>
-//         <div style={{ fontSize: 12, color: "rgba(255,255,255,.35)" }}>
-//           Copyright © 2025. <b style={{ color: "rgba(255,255,255,.55)" }}>All Rights Reserved.</b> · Vashishth IAS Academy, Ludhiana
-//         </div>
-//         <div style={{ display: "flex", gap: 20 }}>
-//           {["Privacy Policy","Terms of Use","Sitemap"].map(l => (
-//             <a key={l} href="#" style={{ fontSize: 12, color: "rgba(255,255,255,.35)", textDecoration: "none", transition: "color .2s" }}
-//               onMouseEnter={e => e.currentTarget.style.color = C.gold}
-//               onMouseLeave={e => e.currentTarget.style.color = "rgba(255,255,255,.35)"}>
-//               {l}
-//             </a>
-//           ))}
-//         </div>
-//       </div>
-//     </footer>
-//   );
-// }
-
-// function FooterHeading({ children }) {
-//   return (
-//     <div style={{ fontFamily: "'Rajdhani',sans-serif", fontSize: 16, fontWeight: 700, color: "#fff", letterSpacing: ".06em", textTransform: "uppercase", marginBottom: 18, paddingBottom: 12, position: "relative" }}>
-//       {children}
-//       <span style={{ position: "absolute", bottom: 0, left: 0, display: "block", width: 36, height: 2.5, borderRadius: 2, background: `linear-gradient(90deg,${C.red},${C.gold})` }} />
-//     </div>
-//   );
-
-// }
-
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { C } from "../data/data";
 import { FaMapMarkerAlt, FaPhone, FaClock, FaEnvelope } from "react-icons/fa";
 
@@ -137,12 +9,31 @@ export default function ContactSection() {
   const [captcha, setCaptcha] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [width, setWidth] = useState(typeof window !== "undefined" ? window.innerWidth : 1200);
-
+const sectionRef = useRef(null);
+const [animateSection, setAnimateSection] = useState(false);
   useEffect(() => {
     const handler = () => setWidth(window.innerWidth);
     window.addEventListener("resize", handler);
     return () => window.removeEventListener("resize", handler);
   }, []);
+  useEffect(() => {
+  const observer = new IntersectionObserver(
+    ([entry]) => {
+      if (entry.isIntersecting) {
+        setAnimateSection(true);
+      }
+    },
+    {
+      threshold: 0.2,
+    }
+  );
+
+  if (sectionRef.current) {
+    observer.observe(sectionRef.current);
+  }
+
+  return () => observer.disconnect();
+}, []);
 
   const isMobile = width < 640;
   const isTablet = width >= 640 && width < 1024;
@@ -244,7 +135,9 @@ export default function ContactSection() {
       </div>
 
       {/* ── Main Grid ── */}
-      <div style={{
+      <div 
+       ref={sectionRef}
+      style={{
         maxWidth: 1100,
         margin: "36px auto",
         padding: isMobile ? "0 16px" : "0 28px",
@@ -255,7 +148,22 @@ export default function ContactSection() {
       }}>
 
         {/* ── Info Cards ── */}
-        <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+        <div
+  style={{
+    display: "flex",
+    flexDirection: "column",
+    gap: 10,
+
+    opacity: animateSection ? 1 : 0,
+
+    transform: animateSection
+      ? "translateX(0)"
+      : "translateX(-180px)",
+
+    transition:
+      "all 1s cubic-bezier(.22,.61,.36,1)",
+  }}
+>
           <div>
             <h2 style={{ fontFamily: "'Rajdhani',sans-serif", fontSize: isMobile ? 22 : 26, fontWeight: 700, color: C.navy, marginBottom: 2 }}>
               Reach <span style={{ color: C.red }}>Us</span>
@@ -303,8 +211,20 @@ export default function ContactSection() {
         </div>
 
         {/* ── Form ── */}
-        <div style={{
-          background: "#fff",
+        <div
+  style={{
+    background: "#fff",
+
+    opacity: animateSection ? 1 : 0,
+
+    transform: animateSection
+      ? "translateX(0)"
+      : "translateX(180px)",
+
+    transition:
+      "all 1s cubic-bezier(.22,.61,.36,1)",
+
+    transitionDelay: "250ms",
           borderRadius: 14,
           padding: isMobile ? "22px 16px 24px" : "28px 26px",
           boxShadow: "0 4px 24px rgba(26,58,107,.10)",
