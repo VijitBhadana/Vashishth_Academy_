@@ -697,7 +697,7 @@ function CourseCard({ c, onKnowMore }) {
       }}
     >
       {/* Image area — fixed height, never changes */}
-      <div style={{
+      {/* <div style={{
         width: "100%",
         height: 180,
         position: "relative",
@@ -714,26 +714,58 @@ function CourseCard({ c, onKnowMore }) {
           fontWeight: 700,
           color: "rgba(255,255,255,.15)",
           userSelect: "none",
-        }}>{c.tag}</span>
+        }}>{c.tag}</span> */}
+<div
+  style={{
+    width: "100%",
+    height: 180,
+    position: "relative",
+    overflow: "hidden",
+    flexShrink: 0,
+  }}
+>
+  <img
+    src={`/assets/${c.id}.png`}
+    alt={c.title}
+    style={{
+      width: "100%",
+      height: "100%",
+      objectFit: "cover",
+      transition: "transform .5s ease",
+      transform: hovered ? "scale(1.08)" : "scale(1)",
+    }}
+  />
 
+  <div
+    style={{
+      position: "absolute",
+      inset: 0,
+      background:
+        hovered
+          ? "linear-gradient(180deg,transparent 40%,rgba(26,58,107,.45) 100%)"
+          : "rgba(0,0,0,.15)",
+      transition: "all .35s ease",
+    }}
+  />
+</div>
         {/* Badge */}
-        <div style={{
+        {/* <div style={{
           position: "absolute", top: 12, left: 12,
           background: C.red, color: "#fff",
           fontSize: 10, fontWeight: 700,
           letterSpacing: ".1em", textTransform: "uppercase",
           padding: "3px 10px", borderRadius: 3,
-        }}>{c.tag}</div>
+        }}>{c.tag}</div> */}
 
         {/* Hover overlay */}
-        <div style={{
+        {/* <div style={{
           position: "absolute", inset: 0,
           background: hovered
             ? "linear-gradient(180deg,transparent 40%,rgba(26,58,107,.55) 100%)"
             : "transparent",
           transition: "background .35s",
         }} />
-      </div>
+      </div> */}
 
       {/* Text content — grows only when hovered */}
       <div style={{ padding: "18px 20px 20px" }}>
