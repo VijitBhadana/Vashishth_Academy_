@@ -526,7 +526,6 @@ export default function ToppersCoverflow() {
         </div>
         <button className="tp-nav tp-nav-r" onClick={next} aria-label="Next">›</button>
       </div>
-      <button className="tp-up-btn" onClick={prev} aria-label="Back">▲</button>
     </div>
   );
 
