@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef, useCallback } from "react";
 import { C, slides } from "../data/data";
+import { useParallax } from "../utils/animations";
 
 function Dot({ active, onClick }) {
   return (
@@ -28,6 +29,7 @@ export default function HeroCarousel() {
   const touchStartX = useRef(null);
   const touchEndX = useRef(null);
   const total = slides.length;
+  const { ref: carouselRef, offset: parallaxOffset } = useParallax(0.25);
 
   const goTo = useCallback(
     (idx) => setCurrent(((idx % total) + total) % total),
@@ -161,6 +163,7 @@ export default function HeroCarousel() {
       `}</style>
 
       <div
+        ref={carouselRef}
         className="hero-wrap"
         style={{
           position: "relative",
@@ -226,7 +229,7 @@ export default function HeroCarousel() {
               <div
                 style={{
                   width: "100%",
-                  height: "100%",
+                  height: "110%",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
@@ -235,7 +238,10 @@ export default function HeroCarousel() {
                   background: s.grad,
                   backgroundImage: s.image ? `url(${s.image})` : undefined,
                   backgroundSize: "cover",
-                  backgroundPosition: "center",
+                  backgroundPositionX: "center",
+                  backgroundPositionY: `calc(50% + ${parallaxOffset * 0.4}px)`,
+                  willChange: "background-position",
+                  transform: `translateY(${-parallaxOffset * 0.15}px)`,
                 }}
               >
                 {/* Dark overlay */}

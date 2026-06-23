@@ -74,12 +74,24 @@
 // }
 
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { C, books, bookThemes } from "../data/data";
 
 function SectionTitle({ children, sub }) {
+  const ref = useRef(null);
+  const [visible, setVisible] = useState(false);
+  useEffect(() => {
+    if (!ref.current) return;
+    const obs = new IntersectionObserver(
+      ([e]) => { if (e.isIntersecting) { setVisible(true); obs.disconnect(); } },
+      { threshold: 0.2 }
+    );
+    obs.observe(ref.current);
+    return () => obs.disconnect();
+  }, []);
+
   return (
-    <div style={{ textAlign: "center", marginBottom: 42 }}>
+    <div ref={ref} style={{ textAlign: "center", marginBottom: 42, paddingTop: "clamp(24px, 4vw, 50px)" }}>
       <h2
         style={{
           fontFamily: "'Rajdhani',sans-serif",
@@ -90,6 +102,10 @@ function SectionTitle({ children, sub }) {
           display: "inline-block",
           position: "relative",
           marginBottom: 10,
+          opacity: visible ? 1 : 0,
+          transform: visible ? "translateY(0)" : "translateY(30px)",
+          filter: visible ? "blur(0)" : "blur(5px)",
+          transition: "opacity 0.8s cubic-bezier(.22,.61,.36,1) 80ms, transform 0.8s cubic-bezier(.22,.61,.36,1) 80ms, filter 0.8s ease 80ms",
         }}
       >
         {children}
@@ -97,22 +113,27 @@ function SectionTitle({ children, sub }) {
           style={{
             display: "block",
             margin: "8px auto 0",
-            width: 60,
+            width: visible ? 60 : 0,
             height: 3,
             background: `linear-gradient(90deg,${C.red},${C.gold})`,
             borderRadius: 2,
+            transition: "width 0.7s cubic-bezier(.22,.61,.36,1) 420ms",
           }}
         />
       </h2>
       {sub && (
         <p
           style={{
-            fontSize: "clamp(12px, 2vw, 14px)",
-            color: "#4a5e7a",
+            fontSize: "clamp(15px, 2.2vw, 18px)",
+            fontWeight: 700,
+            color: C.navy,
             maxWidth: 680,
             margin: "12px auto 0",
             lineHeight: 1.6,
             padding: "0 16px",
+            opacity: visible ? 1 : 0,
+            transform: visible ? "translateY(0)" : "translateY(14px)",
+            transition: "opacity 0.7s ease 300ms, transform 0.7s ease 300ms",
           }}
         >
           {sub}
@@ -387,13 +408,55 @@ export default function StudyMaterials() {
 
   return (
     <section
+      className="study-materials-section"
       style={{
         padding: "clamp(32px,6vw,60px) 0 clamp(40px,7vw,70px)",
-        background: C.bg,
         overflow: "hidden",
         fontFamily: "'Hind',sans-serif",
       }}
     >
+      {/* Promo strip */}
+      <div
+        style={{
+          background: "linear-gradient(90deg, #1a3a6b 0%, #e84118 50%, #1a3a6b 100%)",
+          backgroundSize: "200% auto",
+          animation: "stripScroll 4s linear infinite alternate",
+          padding: "10px 20px",
+          textAlign: "center",
+          letterSpacing: ".06em",
+          fontSize: "clamp(12px, 1.8vw, 15px)",
+          fontWeight: 700,
+          color: "#fff",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          gap: 12,
+          flexWrap: "wrap",
+        }}
+      >
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ flexShrink: 0 }}>
+          <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" stroke="#f9a825" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          <line x1="9" y1="7" x2="15" y2="7" stroke="#f9a825" strokeWidth="1.5" strokeLinecap="round"/>
+          <line x1="9" y1="11" x2="15" y2="11" stroke="#f9a825" strokeWidth="1.5" strokeLinecap="round"/>
+        </svg>
+        <span>Trusted by 10,000+ Aspirants &mdash; Take Your Preparation to the Next Level with Expert Study Material!</span>
+        <span
+          style={{
+            background: "#f9a825",
+            color: "#1a3a6b",
+            fontSize: "clamp(10px, 1.4vw, 12px)",
+            fontWeight: 800,
+            padding: "3px 12px",
+            borderRadius: 20,
+            letterSpacing: ".08em",
+            whiteSpace: "nowrap",
+          }}
+        >
+          ORDER NOW
+        </span>
+      </div>
+
       <SectionTitle sub="Expert-crafted books and resources to power your civil services and defence exam preparation">
         Our Study Materials
       </SectionTitle>

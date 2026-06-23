@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import { C } from "../data/data";
 import { FaMapMarkerAlt, FaPhone, FaClock, FaEnvelope } from "react-icons/fa";
+import { useReveal, useParallax } from "../utils/animations";
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({ firstName: "", lastName: "", email: "", mobile: "", course: "", message: "" });
@@ -11,6 +12,8 @@ export default function ContactSection() {
   const [width, setWidth] = useState(typeof window !== "undefined" ? window.innerWidth : 1200);
 const sectionRef = useRef(null);
 const [animateSection, setAnimateSection] = useState(false);
+  const { ref: heroRef, offset: heroOffset } = useParallax(0.3);
+  const { ref: heroTextRef, visible: heroTextVisible } = useReveal(0.3);
   useEffect(() => {
     const handler = () => setWidth(window.innerWidth);
     window.addEventListener("resize", handler);
@@ -103,20 +106,40 @@ const [animateSection, setAnimateSection] = useState(false);
     <div id="contact-us" style={{ fontFamily: "'Hind',sans-serif" }}>
 
       {/* ── Hero ── */}
-      <div style={{
+      <div ref={heroRef} style={{
         background: "linear-gradient(135deg,#0d2451 0%,#1a3a6b 50%,#0d5e8a 100%)",
         padding: isMobile ? "28px 16px 22px" : "36px 40px 30px",
         textAlign: "center",
         position: "relative",
         overflow: "hidden",
       }}>
-        <div style={{ position: "absolute", inset: 0, backgroundImage: "url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/svg%3E\")" }} />
-        <div style={{ position: "relative" }}>
-          <div style={{ display: "inline-block", background: "rgba(232,65,24,.9)", color: "#fff", fontSize: 10.5, fontWeight: 700, letterSpacing: ".12em", textTransform: "uppercase", padding: "3px 14px", borderRadius: 3, marginBottom: 10 }}>Get In Touch</div>
-          <h1 style={{ fontFamily: "'Rajdhani',sans-serif", fontSize: isMobile ? 26 : 38, fontWeight: 700, color: "#fff", letterSpacing: ".02em", lineHeight: 1.1, marginBottom: 8 }}>
+        <div className="va-parallax-layer" style={{
+          position: "absolute", inset: "-15% 0",
+          backgroundImage: "url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/svg%3E\")",
+          transform: `translateY(${heroOffset}px)`,
+        }} />
+        <div ref={heroTextRef} style={{ position: "relative" }}>
+          <div style={{
+            display: "inline-block", background: "rgba(232,65,24,.9)", color: "#fff", fontSize: 10.5, fontWeight: 700, letterSpacing: ".12em", textTransform: "uppercase", padding: "3px 14px", borderRadius: 3, marginBottom: 10,
+            opacity: heroTextVisible ? 1 : 0,
+            transform: heroTextVisible ? "translateY(0)" : "translateY(16px)",
+            transition: "opacity 0.6s ease 60ms, transform 0.6s ease 60ms",
+          }}>Get In Touch</div>
+          <h1 style={{
+            fontFamily: "'Rajdhani',sans-serif", fontSize: isMobile ? 26 : 38, fontWeight: 700, color: "#fff", letterSpacing: ".02em", lineHeight: 1.1, marginBottom: 8,
+            opacity: heroTextVisible ? 1 : 0,
+            transform: heroTextVisible ? "translateY(0)" : "translateY(28px)",
+            filter: heroTextVisible ? "blur(0)" : "blur(5px)",
+            transition: "opacity 0.85s cubic-bezier(.22,.61,.36,1) 150ms, transform 0.85s cubic-bezier(.22,.61,.36,1) 150ms, filter 0.85s ease 150ms",
+          }}>
             Contact <span style={{ color: C.gold }}>Vashishth</span> IAS Academy
           </h1>
-          <p style={{ fontSize: 13.5, color: "rgba(255,255,255,.8)", maxWidth: 480, margin: "0 auto", padding: "0 8px" }}>
+          <p style={{
+            fontSize: 13.5, color: "rgba(255,255,255,.8)", maxWidth: 480, margin: "0 auto", padding: "0 8px",
+            opacity: heroTextVisible ? 1 : 0,
+            transform: heroTextVisible ? "translateY(0)" : "translateY(14px)",
+            transition: "opacity 0.7s ease 320ms, transform 0.7s ease 320ms",
+          }}>
             Let's Connect! Drop us a Message and Start Your Journey Today.
           </p>
         </div>

@@ -1,3 +1,5 @@
+import { useParallax, useReveal } from "../utils/animations";
+
 const academyEligibility = [
   { academy:"IMA (Indian Military Academy)", age:"19–24 years", gender:"Male", marital:"Unmarried" },
   { academy:"INA (Indian Naval Academy)", age:"19–24 years", gender:"Male", marital:"Unmarried" },
@@ -32,6 +34,8 @@ const TD = { padding:"10px 14px",fontSize:13,color:"#2c3e50",borderBottom:"1px s
 const TDeven = { ...TD, background:"#f5f8fd" };
 
 export default function CoachingForCDSExam() {
+  const { ref: heroRef, offset: heroOffset } = useParallax(0.3);
+  const { ref: heroTextRef, visible: heroTextVisible } = useReveal(0.3);
   return (
     <div style={{ fontFamily:"'Hind',sans-serif",background:"#f0f4f8",minHeight:"100vh" }}>
       <style>{`
@@ -59,9 +63,9 @@ export default function CoachingForCDSExam() {
       `}</style>
 
       {/* ══════ HERO ══════ */}
-      <section style={{ background:"linear-gradient(135deg,#0a1628 0%,#1a3a6b 55%,#0d2444 100%)",position:"relative",overflow:"hidden" }}>
-        <div style={{ position:"absolute",top:0,right:0,width:380,height:380,borderRadius:"50%",background:"radial-gradient(circle,rgba(232,93,4,0.13),transparent)",transform:"translate(30%,-30%)",pointerEvents:"none" }}/>
-        <div style={{ position:"absolute",bottom:0,left:0,width:260,height:260,borderRadius:"50%",background:"radial-gradient(circle,rgba(244,167,38,0.1),transparent)",transform:"translate(-40%,40%)",pointerEvents:"none" }}/>
+      <section ref={heroRef} style={{ background:"linear-gradient(135deg,#0a1628 0%,#1a3a6b 55%,#0d2444 100%)",position:"relative",overflow:"hidden" }}>
+        <div className="va-blob" style={{ position:"absolute",top:0,right:0,width:380,height:380,borderRadius:"50%",background:"radial-gradient(circle,rgba(232,93,4,0.13),transparent)",transform:`translate(30%,-30%) translateY(${heroOffset}px)`,pointerEvents:"none" }}/>
+        <div className="va-blob" style={{ position:"absolute",bottom:0,left:0,width:260,height:260,borderRadius:"50%",background:"radial-gradient(circle,rgba(244,167,38,0.1),transparent)",transform:`translate(-40%,40%) translateY(${heroOffset*0.5}px)`,pointerEvents:"none" }}/>
 
         <div style={{ position:"relative",zIndex:1,maxWidth:1152,margin:"0 auto",padding:"48px 20px 0" }}>
           {/* breadcrumb */}
@@ -75,17 +79,22 @@ export default function CoachingForCDSExam() {
 
           <div className="cds-hero-grid" style={{ display:"grid",gridTemplateColumns:"1fr 1fr",gap:48,alignItems:"center",paddingBottom:48 }}>
             {/* left */}
-            <div>
-              <span className="cds-fadeup cds-d1" style={{ display:"inline-block",padding:"4px 14px",fontSize:11,fontWeight:700,letterSpacing:"0.1em",textTransform:"uppercase",borderRadius:999,background:"rgba(232,93,4,0.2)",color:"#f4a726",border:"1px solid rgba(232,93,4,0.4)",marginBottom:16 }}>
+            <div ref={heroTextRef}>
+              <span style={{ display:"inline-block",padding:"4px 14px",fontSize:11,fontWeight:700,letterSpacing:"0.1em",textTransform:"uppercase",borderRadius:999,background:"rgba(232,93,4,0.2)",color:"#f4a726",border:"1px solid rgba(232,93,4,0.4)",marginBottom:16,
+                opacity:heroTextVisible?1:0,transform:heroTextVisible?"translateY(0)":"translateY(16px)",transition:"opacity 0.6s ease 60ms,transform 0.6s ease 60ms" }}>
                 Defence Coaching — CDS
               </span>
-              <h1 className="cds-fadeup cds-d2 cds-hero-h1" style={{ fontFamily:"'Playfair Display',Georgia,serif",fontSize:"3rem",fontWeight:900,color:"#fff",lineHeight:1.15,margin:"0 0 20px" }}>
+              <h1 className="cds-hero-h1" style={{ fontFamily:"'Playfair Display',Georgia,serif",fontSize:"3rem",fontWeight:900,color:"#fff",lineHeight:1.15,margin:"0 0 20px",
+                opacity:heroTextVisible?1:0,transform:heroTextVisible?"translateY(0)":"translateY(32px)",filter:heroTextVisible?"blur(0)":"blur(6px)",
+                transition:"opacity 0.9s cubic-bezier(.22,.61,.36,1) 150ms,transform 0.9s cubic-bezier(.22,.61,.36,1) 150ms,filter 0.9s ease 150ms" }}>
                 Coaching for<br/><span style={{ color:"#f4a726" }}>CDS Exam</span>
               </h1>
-              <p className="cds-fadeup cds-d3" style={{ color:"#bfdbfe",fontSize:16,lineHeight:1.75,margin:"0 0 28px" }}>
+              <p style={{ color:"#bfdbfe",fontSize:16,lineHeight:1.75,margin:"0 0 28px",
+                opacity:heroTextVisible?1:0,transform:heroTextVisible?"translateY(0)":"translateY(16px)",transition:"opacity 0.7s ease 320ms,transform 0.7s ease 320ms" }}>
                 Combined Defence Services (CDS) — the gateway to IMA, INA, AFA and OTA. Begin your journey to a prestigious career with the Indian Armed Forces with expert coaching at Vashishth IAS Academy, Ludhiana.
               </p>
-              <div className="cds-fadeup cds-d4 cds-hero-btns" style={{ display:"flex",flexWrap:"wrap",gap:12 }}>
+              <div className="cds-hero-btns" style={{ display:"flex",flexWrap:"wrap",gap:12,
+                opacity:heroTextVisible?1:0,transform:heroTextVisible?"translateY(0)":"translateY(14px)",transition:"opacity 0.7s ease 450ms,transform 0.7s ease 450ms" }}>
                 <a href="#cds-enquire" className="cds-btn" style={{ display:"inline-block",padding:"11px 26px",borderRadius:6,background:"#e85d04",color:"#fff",fontWeight:700,fontSize:14,textDecoration:"none",boxShadow:"0 4px 18px rgba(232,93,4,0.45)" }}>Enquire Now</a>
                 <a href="#cds-content" style={{ display:"inline-block",padding:"11px 26px",borderRadius:6,border:"1px solid #60a5fa",color:"#fff",fontWeight:700,fontSize:14,textDecoration:"none" }}>Know More</a>
               </div>

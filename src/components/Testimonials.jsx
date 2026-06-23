@@ -62,6 +62,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import { C } from "../data/data";
+import { useReveal } from "../utils/animations";
 
 const testimonials = [
   {
@@ -99,6 +100,8 @@ export default function Testimonials() {
   const [width, setWidth] = useState(typeof window !== "undefined" ? window.innerWidth : 1200);
   const total = testimonials.length;
   const timerRef = useRef(null);
+  const { ref: leftRef, visible: leftVisible } = useReveal(0.2);
+  const { ref: rightRef, visible: rightVisible } = useReveal(0.2);
 
   useEffect(() => {
     const handler = () => setWidth(window.innerWidth);
@@ -136,24 +139,34 @@ export default function Testimonials() {
       }}>
 
         {/* ── Left: Testimonials ── */}
-        <div>
+        <div ref={leftRef}>
           <h2 style={{
             fontFamily: "'Rajdhani',sans-serif",
             fontSize: isMobile ? 24 : 28,
             fontWeight: 700, color: C.navy,
             letterSpacing: ".02em", marginBottom: 4,
             display: "inline-block", position: "relative",
+            opacity: leftVisible ? 1 : 0,
+            transform: leftVisible ? "translateY(0)" : "translateY(30px)",
+            filter: leftVisible ? "blur(0)" : "blur(5px)",
+            transition: "opacity 0.8s cubic-bezier(.22,.61,.36,1) 80ms, transform 0.8s cubic-bezier(.22,.61,.36,1) 80ms, filter 0.8s ease 80ms",
           }}>
             Our Testimonials
             <span style={{
-              display: "block", marginTop: 8, width: 50, height: 3,
+              display: "block", marginTop: 8,
+              width: leftVisible ? 50 : 0,
+              height: 3,
               background: `linear-gradient(90deg,${C.red},${C.gold})`, borderRadius: 2,
+              transition: "width 0.7s cubic-bezier(.22,.61,.36,1) 420ms",
             }} />
           </h2>
 
           <p style={{
             fontSize: 13, fontWeight: 600, color: "#4a5e7a",
             marginTop: 8, marginBottom: 22, letterSpacing: ".02em",
+            opacity: leftVisible ? 1 : 0,
+            transform: leftVisible ? "translateY(0)" : "translateY(14px)",
+            transition: "opacity 0.7s ease 300ms, transform 0.7s ease 300ms",
           }}>
             Review by Our Success &amp; Top Students
           </p>
@@ -243,13 +256,16 @@ export default function Testimonials() {
         </div>
 
         {/* ── Right: Dream Bigger ── */}
-        <div>
+        <div ref={rightRef}>
           <div style={{
             display: "inline-flex", alignItems: "center", gap: 8,
             background: "linear-gradient(135deg,#1a3a6b,#0d2b52)",
             color: "#fff", fontSize: 12, fontWeight: 600,
             letterSpacing: ".05em", padding: "8px 18px",
             borderRadius: 50, marginBottom: 28, flexWrap: "wrap",
+            opacity: rightVisible ? 1 : 0,
+            transform: rightVisible ? "translateY(0)" : "translateY(20px)",
+            transition: "opacity 0.7s ease 100ms, transform 0.7s ease 100ms",
           }}>
             🏛️ &nbsp;Vashishth IAS Academy &nbsp;·&nbsp;
             <span style={{
@@ -266,14 +282,21 @@ export default function Testimonials() {
             fontWeight: 700, color: C.navy,
             letterSpacing: ".02em", lineHeight: 1.25,
             marginBottom: 18, position: "relative", paddingBottom: 14,
+            opacity: rightVisible ? 1 : 0,
+            transform: rightVisible ? "translateX(0)" : "translateX(40px)",
+            filter: rightVisible ? "blur(0)" : "blur(4px)",
+            transition: "opacity 0.8s cubic-bezier(.22,.61,.36,1) 200ms, transform 0.8s cubic-bezier(.22,.61,.36,1) 200ms, filter 0.8s ease 200ms",
           }}>
             Dream Bigger — We Will<br />
             Make It Happen<br />
             <span style={{ color: C.red }}>@ Vashishth IAS Academy</span>
             <span style={{
               position: "absolute", bottom: 0, left: 0,
-              display: "block", width: 50, height: 3,
+              display: "block",
+              width: rightVisible ? 50 : 0,
+              height: 3,
               background: `linear-gradient(90deg,${C.red},${C.gold})`, borderRadius: 2,
+              transition: "width 0.7s cubic-bezier(.22,.61,.36,1) 500ms",
             }} />
           </h2>
 

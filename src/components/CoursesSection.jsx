@@ -433,6 +433,7 @@
 
 
 import { useState, useEffect, useRef } from "react";
+import { useReveal } from "../utils/animations";
 
 
 /* ─── Color tokens ─── */
@@ -545,8 +546,9 @@ const modalContent = {
    SECTION TITLE
 ══════════════════════════════════════════ */
 function SectionTitle({ children, sub }) {
+  const { ref, visible } = useReveal(0.2);
   return (
-    <div style={{ textAlign: "center", marginBottom: 42 }}>
+    <div ref={ref} style={{ textAlign: "center", marginBottom: 42 }}>
       <h2 style={{
         fontFamily: "'Rajdhani',sans-serif",
         fontSize: "clamp(24px, 4vw, 36px)",
@@ -556,15 +558,20 @@ function SectionTitle({ children, sub }) {
         display: "inline-block",
         position: "relative",
         marginBottom: 10,
+        opacity: visible ? 1 : 0,
+        transform: visible ? "translateY(0)" : "translateY(30px)",
+        filter: visible ? "blur(0)" : "blur(5px)",
+        transition: "opacity 0.8s cubic-bezier(.22,.61,.36,1) 80ms, transform 0.8s cubic-bezier(.22,.61,.36,1) 80ms, filter 0.8s ease 80ms",
       }}>
         {children}
         <span style={{
           display: "block",
           margin: "8px auto 0",
-          width: 60,
+          width: visible ? 60 : 0,
           height: 3,
           background: `linear-gradient(90deg,${C.red},${C.gold})`,
           borderRadius: 2,
+          transition: "width 0.7s cubic-bezier(.22,.61,.36,1) 420ms",
         }} />
       </h2>
       {sub && (
@@ -575,6 +582,9 @@ function SectionTitle({ children, sub }) {
           margin: "12px auto 0",
           lineHeight: 1.6,
           padding: "0 16px",
+          opacity: visible ? 1 : 0,
+          transform: visible ? "translateY(0)" : "translateY(14px)",
+          transition: "opacity 0.7s ease 300ms, transform 0.7s ease 300ms",
         }}>
           {sub}
         </p>

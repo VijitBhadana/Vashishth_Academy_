@@ -2,13 +2,14 @@
 
 import { useEffect, useRef, useState } from "react";
 import { C } from "../data/data";
+import { useParallax, useReveal } from "../utils/animations";
 
 function Reveal({ children }) {
   const ref = useRef(null);
   const [visible, setVisible] = useState(false);
   useEffect(() => {
     const obs = new IntersectionObserver(
-      ([e]) => { if (e.isIntersecting) setVisible(true); },
+      ([e]) => { if (e.isIntersecting) setVisible(true); obs.disconnect(); },
       { threshold: 0.08 }
     );
     if (ref.current) obs.observe(ref.current);
@@ -16,28 +17,51 @@ function Reveal({ children }) {
   }, []);
   return (
     <div ref={ref} style={{
-      transition: "opacity .7s ease, transform .7s ease",
+      transition: "opacity 0.8s cubic-bezier(.22,.61,.36,1), transform 0.8s cubic-bezier(.22,.61,.36,1), filter 0.8s ease",
       opacity: visible ? 1 : 0,
-      transform: visible ? "translateY(0)" : "translateY(28px)",
+      transform: visible ? "translateY(0)" : "translateY(32px)",
+      filter: visible ? "blur(0)" : "blur(3px)",
     }}>
       {children}
     </div>
   );
 }
 
+
 export default function AboutPage() {
   const S = styles;
+  const { ref: heroRef, offset: heroOffset } = useParallax(0.35);
+  const { ref: titleRef, visible: titleVisible } = useReveal(0.3);
 
   return (
     <div style={S.page}>
 
       {/* ── Hero Banner ── */}
-      <div style={S.hero}>
-        <div style={S.heroPattern} />
-        <div style={{ position: "relative", zIndex: 1, textAlign: "center", padding: "0 16px" }}>
-          <span style={S.heroBadge}>Est. 2008 · Ludhiana</span>
-          <h1 style={S.heroTitle}>About Vashishth IAS Academy</h1>
-          <p style={S.heroSub}>Best IAS Coaching in Ludhiana — Shaping Leaders Since 2008</p>
+      <div ref={heroRef} style={S.hero}>
+        <div className="va-parallax-layer" style={{
+          ...S.heroPattern,
+          transform: `translateY(${heroOffset}px)`,
+        }} />
+        <div ref={titleRef} style={{ position: "relative", zIndex: 1, textAlign: "center", padding: "0 16px" }}>
+          <span style={{
+            ...S.heroBadge,
+            opacity: titleVisible ? 1 : 0,
+            transform: titleVisible ? "translateY(0)" : "translateY(16px)",
+            transition: "opacity 0.6s ease 60ms, transform 0.6s ease 60ms",
+          }}>Est. 2008 · Ludhiana</span>
+          <h1 style={{
+            ...S.heroTitle,
+            opacity: titleVisible ? 1 : 0,
+            transform: titleVisible ? "translateY(0)" : "translateY(32px)",
+            filter: titleVisible ? "blur(0)" : "blur(6px)",
+            transition: "opacity 0.9s cubic-bezier(.22,.61,.36,1) 150ms, transform 0.9s cubic-bezier(.22,.61,.36,1) 150ms, filter 0.9s ease 150ms",
+          }}>About Vashishth IAS Academy</h1>
+          <p style={{
+            ...S.heroSub,
+            opacity: titleVisible ? 1 : 0,
+            transform: titleVisible ? "translateY(0)" : "translateY(16px)",
+            transition: "opacity 0.7s ease 350ms, transform 0.7s ease 350ms",
+          }}>Best IAS Coaching in Ludhiana — Shaping Leaders Since 2008</p>
           <div style={{ marginTop: 14, display: "flex", alignItems: "center", justifyContent: "center", gap: 8, fontSize: 13, color: "#93c5fd" }}>
             <a href="/" style={{ color: "#93c5fd", textDecoration: "none" }}
               onMouseEnter={e => e.currentTarget.style.color = C.gold}

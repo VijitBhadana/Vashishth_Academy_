@@ -30,7 +30,131 @@ body {
 .chip span { display: block; font-size: 10px; color: #888; font-weight: 400; }
 .feature-item { background: #f5f8fd; border-radius: 8px; padding: 10px 14px; font-size: 13px; color: #2c3e50; margin-bottom: 8px; line-height: 1.6; }
 
+/* Study Materials promo strip animation */
+@keyframes stripScroll {
+  0%   { background-position: 0% center; }
+  100% { background-position: 100% center; }
+}
+
+/* Study Materials background */
+.study-materials-section {
+  background:
+    linear-gradient(rgba(240,244,250,0.45), rgba(240,244,250,0.45)),
+    url('/assets/study _backgroudn.png');
+  background-size: cover;
+  background-position: left center;
+  background-repeat: no-repeat;
+}
+
+@media (max-width: 900px) {
+  .study-materials-section {
+    background-position: center center;
+  }
+}
+
+@media (max-width: 480px) {
+  .study-materials-section {
+    background-position: center top;
+    background-size: cover;
+  }
+}
+
 html, body {
   overflow-x: hidden;
   max-width: 100%;
+}
+
+/* ═══════════════════════════════════════════════
+   GLOBAL SCROLL ANIMATIONS — Vashishth Academy
+═══════════════════════════════════════════════ */
+
+/* --- Keyframes --- */
+@keyframes va-fadeup {
+  from { opacity: 0; transform: translateY(36px); filter: blur(6px); }
+  to   { opacity: 1; transform: translateY(0);    filter: blur(0);   }
+}
+@keyframes va-slidein-left {
+  from { opacity: 0; transform: translateX(-48px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes va-slidein-right {
+  from { opacity: 0; transform: translateX(48px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes va-scalein {
+  from { opacity: 0; transform: scale(0.82) translateY(20px); filter: blur(4px); }
+  to   { opacity: 1; transform: scale(1) translateY(0);       filter: blur(0); }
+}
+@keyframes va-underline-grow {
+  from { width: 0; opacity: 0; }
+  to   { width: 60px; opacity: 1; }
+}
+@keyframes va-glow-pulse {
+  0%, 100% { text-shadow: 0 0 0 transparent; }
+  50%       { text-shadow: 0 0 28px rgba(26,58,107,0.22); }
+}
+@keyframes va-float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-8px); }
+}
+@keyframes va-shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position:  200% center; }
+}
+
+/* --- Section heading animation helpers --- */
+.va-heading-wrap {
+  overflow: hidden;
+}
+
+/* Parallax hero — children handle their own translateY via JS */
+.va-parallax-hero {
+  position: relative;
+  overflow: hidden;
+}
+.va-parallax-layer {
+  will-change: transform;
+  transition: transform 0.04s linear;
+}
+
+/* Scroll-reveal utility (added via JS) */
+.va-reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  filter: blur(4px);
+  transition: opacity 0.8s cubic-bezier(.22,.61,.36,1),
+              transform 0.8s cubic-bezier(.22,.61,.36,1),
+              filter 0.8s ease;
+}
+.va-reveal.va-visible {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
+}
+.va-reveal-left {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: opacity 0.8s cubic-bezier(.22,.61,.36,1),
+              transform 0.8s cubic-bezier(.22,.61,.36,1);
+}
+.va-reveal-left.va-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Animated gradient underline */
+.va-underline {
+  display: block;
+  height: 3px;
+  background: linear-gradient(90deg, #e84118, #f9a825);
+  border-radius: 2px;
+  margin: 8px auto 0;
+  transition: width 0.7s cubic-bezier(.22,.61,.36,1) 400ms;
+}
+
+/* Floating blobs in hero sections */
+.va-blob {
+  pointer-events: none;
+  will-change: transform;
+  transition: transform 0.05s linear;
 }

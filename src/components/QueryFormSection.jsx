@@ -3,6 +3,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import { C } from "../data/data";
+import { useReveal } from "../utils/animations";
 import { FaTrophy, FaChalkboardTeacher, FaBullseye, FaBook, FaMapMarkerAlt, FaLaptop } from "react-icons/fa";
 
 
@@ -12,6 +13,7 @@ export default function QueryFormSection() {
   const [width, setWidth] = useState(typeof window !== "undefined" ? window.innerWidth : 1200);
 const featuresRef = useRef(null);
 const [showFeatures, setShowFeatures] = useState(false);
+  const { ref: headingRef, visible: headingVisible } = useReveal(0.2);
 
   useEffect(() => {
     const handler = () => setWidth(window.innerWidth);
@@ -119,18 +121,25 @@ const [showFeatures, setShowFeatures] = useState(false);
       }}>
 
         {/* ── Left: Features ── */}
-        <div>
+        <div ref={headingRef}>
           <h1 style={{
             fontFamily: "'Rajdhani',sans-serif",
             fontSize: isMobile ? 26 : isTablet ? 30 : 34,
             fontWeight: 700, color: C.red, lineHeight: 1.2,
             letterSpacing: ".02em", marginBottom: 10,
+            opacity: headingVisible ? 1 : 0,
+            transform: headingVisible ? "translateY(0)" : "translateY(32px)",
+            filter: headingVisible ? "blur(0)" : "blur(5px)",
+            transition: "opacity 0.85s cubic-bezier(.22,.61,.36,1) 60ms, transform 0.85s cubic-bezier(.22,.61,.36,1) 60ms, filter 0.85s ease 60ms",
           }}>
             Achieve IAS Ambitions with India's Leading UPSC Coaching Institute
           </h1>
           <p style={{
             fontSize: isMobile ? 13 : 14, fontWeight: 600,
             color: C.navy, marginBottom: 36, letterSpacing: ".02em",
+            opacity: headingVisible ? 1 : 0,
+            transform: headingVisible ? "translateY(0)" : "translateY(16px)",
+            transition: "opacity 0.7s ease 280ms, transform 0.7s ease 280ms",
           }}>
             Join the League of Leaders – Enroll at Vashishth IAS Academy Today!
           </p>

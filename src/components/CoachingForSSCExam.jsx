@@ -1,3 +1,5 @@
+import { useParallax, useReveal } from "../utils/animations";
+
 const sscExams = [
   { short:"SSC CGL", full:"Combined Graduate Level", desc:"For graduate-level posts in various ministries and departments", color:"#1a3a6b" },
   { short:"SSC JE", full:"Junior Engineer", desc:"For engineering posts in government departments", color:"#0d7490" },
@@ -74,6 +76,8 @@ const TD = { padding:"10px 14px",fontSize:13,color:"#2c3e50",borderBottom:"1px s
 const TDeven = { ...TD, background:"#f5f8fd" };
 
 export default function CoachingForSSCExam() {
+  const { ref: heroRef, offset: heroOffset } = useParallax(0.3);
+  const { ref: heroTextRef, visible: heroTextVisible } = useReveal(0.3);
   return (
     <div style={{ fontFamily:"'Hind',sans-serif",background:"#f0f4f8",minHeight:"100vh" }}>
       <style>{`
@@ -106,9 +110,9 @@ export default function CoachingForSSCExam() {
       `}</style>
 
       {/* ══════ HERO ══════ */}
-      <section style={{ background:"linear-gradient(135deg,#0a1628 0%,#1a3a6b 55%,#0d2444 100%)",position:"relative",overflow:"hidden" }}>
-        <div style={{ position:"absolute",top:0,right:0,width:380,height:380,borderRadius:"50%",background:"radial-gradient(circle,rgba(232,93,4,0.13),transparent)",transform:"translate(30%,-30%)",pointerEvents:"none" }}/>
-        <div style={{ position:"absolute",bottom:0,left:0,width:260,height:260,borderRadius:"50%",background:"radial-gradient(circle,rgba(244,167,38,0.1),transparent)",transform:"translate(-40%,40%)",pointerEvents:"none" }}/>
+      <section ref={heroRef} style={{ background:"linear-gradient(135deg,#0a1628 0%,#1a3a6b 55%,#0d2444 100%)",position:"relative",overflow:"hidden" }}>
+        <div className="va-blob" style={{ position:"absolute",top:0,right:0,width:380,height:380,borderRadius:"50%",background:"radial-gradient(circle,rgba(232,93,4,0.13),transparent)",transform:`translate(30%,-30%) translateY(${heroOffset}px)`,pointerEvents:"none" }}/>
+        <div className="va-blob" style={{ position:"absolute",bottom:0,left:0,width:260,height:260,borderRadius:"50%",background:"radial-gradient(circle,rgba(244,167,38,0.1),transparent)",transform:`translate(-40%,40%) translateY(${heroOffset*0.5}px)`,pointerEvents:"none" }}/>
 
         <div style={{ position:"relative",zIndex:1,maxWidth:1152,margin:"0 auto",padding:"48px 20px 0" }}>
           {/* breadcrumb */}
@@ -122,17 +126,22 @@ export default function CoachingForSSCExam() {
 
           <div className="ssc-hero-grid" style={{ display:"grid",gridTemplateColumns:"1fr 1fr",gap:48,alignItems:"center",paddingBottom:48 }}>
             {/* left */}
-            <div>
-              <span className="ssc-fadeup ssc-d1" style={{ display:"inline-block",padding:"4px 14px",fontSize:11,fontWeight:700,letterSpacing:"0.1em",textTransform:"uppercase",borderRadius:999,background:"rgba(232,93,4,0.2)",color:"#f4a726",border:"1px solid rgba(232,93,4,0.4)",marginBottom:16 }}>
+            <div ref={heroTextRef}>
+              <span style={{ display:"inline-block",padding:"4px 14px",fontSize:11,fontWeight:700,letterSpacing:"0.1em",textTransform:"uppercase",borderRadius:999,background:"rgba(232,93,4,0.2)",color:"#f4a726",border:"1px solid rgba(232,93,4,0.4)",marginBottom:16,
+                opacity:heroTextVisible?1:0,transform:heroTextVisible?"translateY(0)":"translateY(16px)",transition:"opacity 0.6s ease 60ms,transform 0.6s ease 60ms" }}>
                 SSC Coaching — Ludhiana
               </span>
-              <h1 className="ssc-fadeup ssc-d2 ssc-hero-h1" style={{ fontFamily:"'Playfair Display',Georgia,serif",fontSize:"3rem",fontWeight:900,color:"#fff",lineHeight:1.15,margin:"0 0 20px" }}>
+              <h1 className="ssc-hero-h1" style={{ fontFamily:"'Playfair Display',Georgia,serif",fontSize:"3rem",fontWeight:900,color:"#fff",lineHeight:1.15,margin:"0 0 20px",
+                opacity:heroTextVisible?1:0,transform:heroTextVisible?"translateY(0)":"translateY(32px)",filter:heroTextVisible?"blur(0)":"blur(6px)",
+                transition:"opacity 0.9s cubic-bezier(.22,.61,.36,1) 150ms,transform 0.9s cubic-bezier(.22,.61,.36,1) 150ms,filter 0.9s ease 150ms" }}>
                 Best Coaching<br/><span style={{ color:"#f4a726" }}>for SSC Exam</span>
               </h1>
-              <p className="ssc-fadeup ssc-d3" style={{ color:"#bfdbfe",fontSize:16,lineHeight:1.75,margin:"0 0 28px" }}>
+              <p style={{ color:"#bfdbfe",fontSize:16,lineHeight:1.75,margin:"0 0 28px",
+                opacity:heroTextVisible?1:0,transform:heroTextVisible?"translateY(0)":"translateY(16px)",transition:"opacity 0.7s ease 320ms,transform 0.7s ease 320ms" }}>
                 SSC is a reputed organization under the Government of India that recruits eligible candidates for various Government departments and ministries. Prepare with the best SSC coaching in Ludhiana at Vashishth IAS Academy.
               </p>
-              <div className="ssc-fadeup ssc-d4 ssc-hero-btns" style={{ display:"flex",flexWrap:"wrap",gap:12 }}>
+              <div className="ssc-hero-btns" style={{ display:"flex",flexWrap:"wrap",gap:12,
+                opacity:heroTextVisible?1:0,transform:heroTextVisible?"translateY(0)":"translateY(14px)",transition:"opacity 0.7s ease 450ms,transform 0.7s ease 450ms" }}>
                 <a href="#ssc-enquire" className="ssc-btn" style={{ display:"inline-block",padding:"11px 26px",borderRadius:6,background:"#e85d04",color:"#fff",fontWeight:700,fontSize:14,textDecoration:"none",boxShadow:"0 4px 18px rgba(232,93,4,0.45)" }}>Enquire Now</a>
                 <a href="#ssc-content" style={{ display:"inline-block",padding:"11px 26px",borderRadius:6,border:"1px solid #60a5fa",color:"#fff",fontWeight:700,fontSize:14,textDecoration:"none" }}>Know More</a>
               </div>
