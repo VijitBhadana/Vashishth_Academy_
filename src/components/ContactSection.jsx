@@ -335,25 +335,56 @@ const [animateSection, setAnimateSection] = useState(false);
         </div>
       </div>
 
-      {/* ── Single Map ── */}
+      {/* ── Maps ── */}
       <div style={{ maxWidth: 1100, margin: "0 auto 36px", padding: isMobile ? "0 16px" : "0 28px" }}>
         <h2 style={{ fontFamily: "'Rajdhani',sans-serif", fontSize: isMobile ? 20 : 26, fontWeight: 700, color: C.navy, display: "inline-block", position: "relative", marginBottom: 16 }}>
           Find Us on Map
           <span style={{ display: "block", width: 46, height: 3, background: `linear-gradient(90deg,${C.red},${C.gold})`, borderRadius: 2, marginTop: 5 }} />
         </h2>
-        <div style={{ borderRadius: 12, overflow: "hidden", boxShadow: "0 4px 18px rgba(26,58,107,.12)", position: "relative" }}>
-          <div style={{ position: "absolute", top: 10, left: 10, zIndex: 10, background: C.navy, color: "#fff", fontFamily: "'Rajdhani',sans-serif", fontSize: 11, fontWeight: 700, letterSpacing: ".08em", textTransform: "uppercase", padding: "3px 10px", borderRadius: 4 }}>
-            📍 Office 1 — Model Town
+        <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr", gap: 20 }}>
+
+          {/* Address 1 Map */}
+          <div>
+            <div style={{ fontFamily: "'Rajdhani',sans-serif", fontSize: 13, fontWeight: 700, color: C.navy, letterSpacing: ".06em", textTransform: "uppercase", marginBottom: 8, display: "flex", alignItems: "center", gap: 6 }}>
+              <span style={{ color: C.red }}>📍</span> Address 1 — 1st Floor
+            </div>
+            <div style={{ borderRadius: 12, overflow: "hidden", boxShadow: "0 4px 18px rgba(26,58,107,.12)" }}>
+              <iframe
+                src="https://maps.google.com/maps?q=268A+Krishna+Mandir+Rd+Nehru+Nagar+Model+Town+Extension+Ludhiana+Punjab+141002&t=&z=17&ie=UTF8&iwloc=&output=embed"
+                width="100%"
+                height={isMobile ? "220" : "280"}
+                style={{ border: "none", display: "block" }}
+                allowFullScreen
+                loading="lazy"
+                title="Address 1 — 1st Floor, Krishna Mandir Road"
+              />
+            </div>
+            <p style={{ fontSize: 12, color: "#4a5e7a", marginTop: 8, lineHeight: 1.5 }}>
+              268A, 1st Floor, Krishna Mandir Rd, above Basant Ice Cream, Nehru Nagar, Model Town Extension, Ludhiana 141002
+            </p>
           </div>
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3418.9!2d75.8407!3d30.9010!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391a837616db8b8b%3A0x8b2b2b2b2b2b2b2b!2sVashishth%20IAS%20Academy!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin"
-            width="100%"
-            height={isMobile ? "220" : "300"}
-            style={{ border: "none", display: "block" }}
-            allowFullScreen
-            loading="lazy"
-            title="Office 1 — Model Town"
-          />
+
+          {/* Address 2 Map */}
+          <div>
+            <div style={{ fontFamily: "'Rajdhani',sans-serif", fontSize: 13, fontWeight: 700, color: C.navy, letterSpacing: ".06em", textTransform: "uppercase", marginBottom: 8, display: "flex", alignItems: "center", gap: 6 }}>
+              <span style={{ color: C.red }}>📍</span> Address 2 — 2nd Floor
+            </div>
+            <div style={{ borderRadius: 12, overflow: "hidden", boxShadow: "0 4px 18px rgba(26,58,107,.12)" }}>
+              <iframe
+                src="https://maps.google.com/maps?q=268A+Krishna+Mandir+Rd+Nehru+Nagar+Model+Town+Extension+Ludhiana+Punjab+141002&t=&z=17&ie=UTF8&iwloc=B&output=embed"
+                width="100%"
+                height={isMobile ? "220" : "280"}
+                style={{ border: "none", display: "block" }}
+                allowFullScreen
+                loading="lazy"
+                title="Address 2 — 2nd Floor, Krishna Mandir Road"
+              />
+            </div>
+            <p style={{ fontSize: 12, color: "#4a5e7a", marginTop: 8, lineHeight: 1.5 }}>
+              268A, 2nd Floor, Krishna Mandir Rd, above Basant Ice Cream, near Krishna Mandir, Nehru Nagar, Model Town Extension, Ludhiana 141002
+            </p>
+          </div>
+
         </div>
       </div>
 

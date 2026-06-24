@@ -287,12 +287,21 @@ export default function HeroCarousel() {
 
                   <button
                     className="hero-btn"
-                    style={{ background: C.gold, color: C.navy }}
+                    style={{ background: C.gold, color: C.navy, display: "inline-flex", flexDirection: "column", alignItems: "center", gap: 2 }}
                     onMouseEnter={(e) => (e.currentTarget.style.background = "#fff")}
                     onMouseLeave={(e) => (e.currentTarget.style.background = C.gold)}
                   >
-                    {s.btn}
+                    <span>{s.btn}</span>
+                    {s.btnSub && (
+                      <span style={{ fontSize: 10, fontWeight: 600, letterSpacing: ".05em", opacity: 0.85 }}>{s.btnSub}</span>
+                    )}
                   </button>
+
+                  {s.session && (
+                    <div style={{ marginTop: 12, fontSize: 14, fontWeight: 600, color: "#fff", letterSpacing: ".06em", textShadow: "0 1px 6px rgba(0,0,0,.5)" }}>
+                      {s.session}
+                    </div>
+                  )}
                 </div>
               </div>
             </div>

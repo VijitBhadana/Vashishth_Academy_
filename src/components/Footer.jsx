@@ -251,7 +251,7 @@
 //         flexWrap: "wrap",
 //       }}>
 //         <div style={{ fontSize: 12, color: "rgba(255,255,255,.35)" }}>
-//           Copyright © 2025. <b style={{ color: "rgba(255,255,255,.55)" }}>All Rights Reserved.</b> · Vashishth IAS Academy, Ludhiana
+//           Copyright © 2026. <b style={{ color: "rgba(255,255,255,.55)" }}>All Rights Reserved.</b> · Vashishth IAS Academy, Ludhiana
 //         </div>
 //         <div style={{ display: "flex", gap: isMobile ? 14 : 20, flexWrap: "wrap" }}>
 //           {["Privacy Policy","Terms of Use","Sitemap"].map(l => (
@@ -288,7 +288,8 @@ export default function Footer() {
   const isTablet = width >= 640 && width < 1024;
 
   const contactItems = [
-    { icon: <FaMapMarkerAlt size={15} color={C.red} />, label: "Address", val: "268 A, 1st Floor, Krishna Mandir Road, Ludhiana." },
+    { icon: <FaMapMarkerAlt size={15} color={C.red} />, label: "Address 1", val: "268A, 1st Floor, Krishna Mandir Rd, above Basant Ice Cream, near Krishna Mandir, Nehru Nagar, Model Town Extension, Ludhiana, Punjab 141002" },
+    { icon: <FaMapMarkerAlt size={15} color={C.red} />, label: "Address 2", val: "268A, 2nd Floor, Krishna Mandir Rd, above Basant Ice Cream, near Krishna Mandir, Nehru Nagar, Model Town Extension, Ludhiana, Punjab 141002" },
     { icon: <FaPhone size={14} color={C.red} />, label: "Phone", val: "+91-94640-31200", href: "tel:+919464031200" },
     { icon: <FaEnvelope size={14} color={C.red} />, label: "Email", val: "info@vashishthacademy.com", href: "mailto:info@vashishthacademy.com" },
     { icon: <FaClock size={14} color={C.red} />, label: "Opening Hours", val: "Mon–Sat: 8:00 AM – 6:00 PM" },
@@ -515,7 +516,7 @@ export default function Footer() {
         flexWrap: "wrap",
       }}>
         <div style={{ fontSize: 12, color: "rgba(255,255,255,.35)" }}>
-          Copyright © 2025. <b style={{ color: "rgba(255,255,255,.55)" }}>All Rights Reserved.</b> · Vashishth IAS Academy, Ludhiana
+          Copyright © 2026. <b style={{ color: "rgba(255,255,255,.55)" }}>All Rights Reserved.</b> · Vashishth IAS Academy, Ludhiana
         </div>
         <div style={{ display: "flex", gap: isMobile ? 14 : 20, flexWrap: "wrap" }}>
           {["Privacy Policy","Terms of Use","Sitemap"].map(l => (

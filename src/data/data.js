@@ -6,8 +6,8 @@ export const C = {
 };
 
 // export const slides = [
-//   { tag: "UPSC 2025", title: "Begin Your IAS\nJourney Today", sub: "India's most trusted civil services coaching in Ludhiana", btn: "Explore Courses", grad: "linear-gradient(135deg,#0d2b5e,#1a6b8a)" },
-//   { tag: "New Batch", title: "PPSC Foundation\nBatch 2025", sub: "Comprehensive coaching for Punjab Public Service Commission", btn: "Register Now", grad: "linear-gradient(135deg,#7b1a1a,#c0392b)" },
+//   { tag: "UPSC 2026", title: "Begin Your IAS\nJourney Today", sub: "India's most trusted civil services coaching in Ludhiana", btn: "Explore Courses", grad: "linear-gradient(135deg,#0d2b5e,#1a6b8a)" },
+//   { tag: "New Batch", title: "PPSC Foundation\nBatch 2026", sub: "Comprehensive coaching for Punjab Public Service Commission", btn: "Register Now", grad: "linear-gradient(135deg,#7b1a1a,#c0392b)" },
 //   { tag: "Daily Current Affairs", title: "Stay Ahead with\nFree Live Classes", sub: "Join thousands of aspirants learning every day, live", btn: "Join Free", grad: "linear-gradient(135deg,#1a5c1a,#2e7d32)" },
 //   { tag: "Test Series", title: "Mock Tests &\nPerformance Analysis", sub: "Sharpen your exam strategy with our expert-designed test series", btn: "Start Practicing", grad: "linear-gradient(135deg,#4a1a6b,#7b2d8b)" },
 //   { tag: "IPS Coaching", title: "Your Dream of\nIPS Starts Here", sub: "Dedicated IPS track with experienced mentors and study material", btn: "Learn More", grad: "linear-gradient(135deg,#1a4a6b,#e84118)" },
@@ -17,8 +17,8 @@ export const C = {
 // ];
 
 // export const slides = [
-//   { tag: "UPSC 2025", title: "Begin Your IAS\nJourney Today", sub: "India's most trusted civil services coaching in Ludhiana", btn: "Explore Courses", grad: "linear-gradient(135deg,#0d2b5e,#1a6b8a)", image: "/src/assets/hero1.png" },
-//   { tag: "New Batch", title: "PPSC Foundation\nBatch 2025", sub: "Comprehensive coaching for Punjab Public Service Commission", btn: "Register Now", grad: "linear-gradient(135deg,#7b1a1a,#c0392b)", image: "/src/assets/hero2.png" },
+//   { tag: "UPSC 2026", title: "Begin Your IAS\nJourney Today", sub: "India's most trusted civil services coaching in Ludhiana", btn: "Explore Courses", grad: "linear-gradient(135deg,#0d2b5e,#1a6b8a)", image: "/src/assets/hero1.png" },
+//   { tag: "New Batch", title: "PPSC Foundation\nBatch 2026", sub: "Comprehensive coaching for Punjab Public Service Commission", btn: "Register Now", grad: "linear-gradient(135deg,#7b1a1a,#c0392b)", image: "/src/assets/hero2.png" },
 //   { tag: "Daily Current Affairs", title: "Stay Ahead with\nFree Live Classes", sub: "Join thousands of aspirants learning every day, live", btn: "Join Free", grad: "linear-gradient(135deg,#1a5c1a,#2e7d32)", image: "/src/assets/hero3.png" },
 //   { tag: "Test Series", title: "Mock Tests &\nPerformance Analysis", sub: "Sharpen your exam strategy with our expert-designed test series", btn: "Start Practicing", grad: "linear-gradient(135deg,#4a1a6b,#7b2d8b)", image: "/src/assets/hero4.png" },
 //   { tag: "IPS Coaching", title: "Your Dream of\nIPS Starts Here", sub: "Dedicated IPS track with experienced mentors and study material", btn: "Learn More", grad: "linear-gradient(135deg,#1a4a6b,#e84118)", image: "/src/assets/hero5.png" },
@@ -29,16 +29,17 @@ export const C = {
 
 export const slides = [
   {
-    tag: "UPSC 2025",
+    tag: "UPSC 2026",
     title: "Begin Your IAS\nJourney Today",
     sub: "India's most trusted civil services coaching in Ludhiana",
     btn: "Explore Courses",
+    session: "Session 2026-27",
     grad: "linear-gradient(135deg,#0d2b5e,#1a6b8a)",
     image: "/assets/hero1.png",
   },
   {
     tag: "New Batch",
-    title: "PPSC Foundation\nBatch 2025",
+    title: "PPSC Foundation\nBatch 2026-27",
     sub: "Comprehensive coaching for Punjab Public Service Commission",
     btn: "Register Now",
     grad: "linear-gradient(135deg,#7b1a1a,#c0392b)",
@@ -81,6 +82,7 @@ export const slides = [
     title: "Learn From Home\nWith Live Classes",
     sub: "Full-featured online batches with recorded backup and doubt sessions",
     btn: "Join Online",
+    btnSub: "Session 2026-27",
     grad: "linear-gradient(135deg,#1a3a6b,#0d5e4a)",
     image: "/assets/hero7.png",
   },
@@ -127,7 +129,7 @@ export const books = [
   ],
   [
     { theme: "indigo",    spine: "Science & Tech",       tag: "GS III",   title: "SCIENCE\n& TECH",            bullets: ["Space & Defence","Biotechnology"],          label: "Science & Technology"  },
-    { theme: "amber",     spine: "Current Affairs",      tag: "2025",     title: "CURRENT\nAFFAIRS",           bullets: ["Monthly Digest","MCQ Practice"],            label: "Current Affairs 2025"  },
+    { theme: "amber",     spine: "Current Affairs",      tag: "2026",     title: "CURRENT\nAFFAIRS",           bullets: ["Monthly Digest","MCQ Practice"],            label: "Current Affairs 2026"  },
     { theme: "slate",     spine: "Ethics",               tag: "GS IV",    title: "ETHICS,\nINTEGRITY\n& APTITUDE", bullets: ["Case Studies","Answer Writing"],      label: "Ethics & Integrity"    },
   ],
   [

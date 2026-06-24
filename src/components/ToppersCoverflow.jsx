@@ -472,7 +472,7 @@ function useStagger() {
 }
 
 const STATS    = [["Total IAS Selections:","150+"],["IMA Selections:","90+"],["CDS Toppers:","45%"],["Pan-India Rankers:","300+"]];
-const SESSIONS = ["Strategy Session by Ranker 1 - Aug 15","CDS Exam Tips by Col. Sharma - Aug 18","Personalized Mentorship Form"];
+const SESSIONS = ["New batch IAS 2026-2027 - Coming Soon"];
 
 export default function ToppersCoverflow() {
   const [active, setActive]     = useState(0);

@@ -5,7 +5,7 @@ const keyHighlights = [
   { feature: "Organization", details: "Punjab Public Service Commission" },
   { feature: "Post Name", details: "• Punjab Civil Service (Executive Branch)\n• Deputy Superintendent of Police\n• PPSC Naib Tehsildar\n• Excise & Taxation Officer (ETO)\n• Food and Civil Supply Officer\n• Block Development and Panchayat Officer\n• Assistant Registrar Co-Operative Societies\n• Labour-cum-Conciliation Officer\n• Employment Generation, Skill Development & Training Officer\n• Deputy Superintendent Jails Grade -2 / District Probation Officer" },
   { feature: "Vacancy", details: "322" },
-  { feature: "Exam Date", details: "• Preliminary Exam Date: April 2025 (Tentative)\n• Main Exam Date: To be Announced" },
+  { feature: "Exam Date", details: "• Preliminary Exam Date: April 2026 (Tentative)\n• Main Exam Date: To be Announced" },
   { feature: "Application Mode", details: "Online" },
   { feature: "Exam Mode", details: "Offline" },
   { feature: "Recruitment Process", details: "• Preliminary Exam\n• Main Exam\n• Interview" },
@@ -16,13 +16,13 @@ const keyHighlights = [
 ];
 
 const examDates = [
-  { event: "PPSC Application Start Date", date: "January 3, 2025" },
-  { event: "PPSC Application End Date", date: "January 31, 2025" },
-  { event: "Application Fee Last Date", date: "January 31, 2025" },
+  { event: "PPSC Application Start Date", date: "January 3, 2026" },
+  { event: "PPSC Application End Date", date: "January 31, 2026" },
+  { event: "Application Fee Last Date", date: "January 31, 2026" },
   { event: "Admit Card Release", date: "To be announced" },
-  { event: "Preliminary Exam Date", date: "April 2025 (Tentative)" },
+  { event: "Preliminary Exam Date", date: "April 2026 (Tentative)" },
   { event: "Preliminary Exam Results", date: "To be announced" },
-  { event: "Main Exam Date", date: "September-October 2025" },
+  { event: "Main Exam Date", date: "September-October 2026" },
   { event: "Main Exam Results", date: "To be announced" },
   { event: "Interview Date", date: "To be announced" },
   { event: "Final Merit List", date: "After the interview process" },
@@ -134,7 +134,7 @@ export default function CoachingForPCSExam() {
               </h1>
               <p style={{ color:"#bfdbfe",fontSize:16,lineHeight:1.75,margin:"0 0 28px",
                 opacity: heroTextVisible ? 1 : 0, transform: heroTextVisible ? "translateY(0)" : "translateY(16px)", transition: "opacity 0.7s ease 320ms, transform 0.7s ease 320ms" }}>
-                PPSC 2025: Your Complete Exam Guide for Success — Punjab Public Service Commission coaching by Vashishth IAS Academy, Ludhiana.
+                PPSC 2026: Your Complete Exam Guide for Success — Punjab Public Service Commission coaching by Vashishth IAS Academy, Ludhiana.
               </p>
               <div className="pcs-hero-btns" style={{ display:"flex",flexWrap:"wrap",gap:12,
                 opacity: heroTextVisible ? 1 : 0, transform: heroTextVisible ? "translateY(0)" : "translateY(14px)", transition: "opacity 0.7s ease 450ms, transform 0.7s ease 450ms" }}>
@@ -146,7 +146,7 @@ export default function CoachingForPCSExam() {
             {/* stats card */}
             <div className="pcs-fadeup pcs-d3">
               <div style={{ borderRadius:16,padding:"28px 24px",background:"rgba(255,255,255,0.07)",border:"1px solid rgba(255,255,255,0.13)" }}>
-                <p style={{ color:"#93c5fd",fontSize:11,fontWeight:700,letterSpacing:"0.12em",textTransform:"uppercase",marginBottom:20 }}>PPSC 2025 At a Glance</p>
+                <p style={{ color:"#93c5fd",fontSize:11,fontWeight:700,letterSpacing:"0.12em",textTransform:"uppercase",marginBottom:20 }}>PPSC 2026 At a Glance</p>
                 <div className="pcs-stats-grid" style={{ display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:12,marginBottom:20 }}>
                   {[["322","Vacancies"],["3 Stages","Selection"],["₹39K","Max Salary"]].map(([n,l])=>(
                     <div key={l} style={{ textAlign:"center" }}>
@@ -185,17 +185,17 @@ export default function CoachingForPCSExam() {
           <div>
             <div style={{ display:"flex",alignItems:"center",gap:12,marginBottom:20 }}>
               <div style={{ width:36,height:4,borderRadius:4,background:"#e85d04",flexShrink:0 }}/>
-              <h2 style={{ fontFamily:"'Playfair Display',serif",fontSize:"1.7rem",fontWeight:700,color:"#0a1628",margin:0 }}>PPSC 2025: Your Complete Exam Guide</h2>
+              <h2 style={{ fontFamily:"'Playfair Display',serif",fontSize:"1.7rem",fontWeight:700,color:"#0a1628",margin:0 }}>PPSC 2026: Your Complete Exam Guide</h2>
             </div>
             <p style={{ color:"#374151",fontSize:15,lineHeight:1.8,margin:"0 0 20px" }}>
-              Are you aspiring for a government job in Punjab? The Punjab Public Service Commission (PPSC) conducts a range of exams to hire skilled candidates for various government roles. If you're preparing for the PPSC exams in 2025, this detailed guide is for you. We will cover all essential information, including eligibility criteria, exam pattern, and effective preparation tips, presented in a simple and easy-to-understand format.
+              Are you aspiring for a government job in Punjab? The Punjab Public Service Commission (PPSC) conducts a range of exams to hire skilled candidates for various government roles. If you're preparing for the PPSC exams in 2026, this detailed guide is for you. We will cover all essential information, including eligibility criteria, exam pattern, and effective preparation tips, presented in a simple and easy-to-understand format.
             </p>
 
             {/* Notification box */}
             <div style={{ background:"#fff",borderRadius:12,padding:"20px 22px",boxShadow:"0 2px 10px rgba(0,0,0,0.07)",marginBottom:20 }}>
-              <h3 style={{ fontFamily:"'Playfair Display',serif",fontSize:"1.2rem",fontWeight:700,color:"#0a1628",margin:"0 0 12px" }}>PPSC 2025 Notification</h3>
+              <h3 style={{ fontFamily:"'Playfair Display',serif",fontSize:"1.2rem",fontWeight:700,color:"#0a1628",margin:"0 0 12px" }}>PPSC 2026 Notification</h3>
               <p style={{ color:"#374151",fontSize:14,lineHeight:1.8,margin:0 }}>
-                The application schedule for the Punjab PCS 2025 Exam is now available. You can register from <strong>January 3rd to January 31st, 2025</strong>, until 11:59 PM. The last day to pay the application fee is also January 31st, 2025. The prelims exam is expected to take place in <strong>April 2025</strong>. Read the instructions carefully before applying.
+                The application schedule for the Punjab PCS 2026 Exam is now available. You can register from <strong>January 3rd to January 31st, 2026</strong>, until 11:59 PM. The last day to pay the application fee is also January 31st, 2026. The prelims exam is expected to take place in <strong>April 2026</strong>. Read the instructions carefully before applying.
               </p>
             </div>
           </div>
@@ -225,9 +225,9 @@ export default function CoachingForPCSExam() {
         </div>
 
         {/* ── Key Highlights ── */}
-        <SectionBlock title="PPSC 2025: Key Highlights">
+        <SectionBlock title="PPSC 2026: Key Highlights">
           <p style={{ color:"#374151",fontSize:14,lineHeight:1.8,margin:"0 0 16px" }}>
-            Aspirants willing to appear for the PPSC 2025 exam must go through the article to get details about the important dates, exam pattern, syllabus, preparation tips, and many more.
+            Aspirants willing to appear for the PPSC 2026 exam must go through the article to get details about the important dates, exam pattern, syllabus, preparation tips, and many more.
           </p>
           <div className="pcs-table-wrap">
             <table style={{ width:"100%",borderCollapse:"collapse",fontSize:13 }}>
@@ -250,9 +250,9 @@ export default function CoachingForPCSExam() {
         </SectionBlock>
 
         {/* ── Exam Dates ── */}
-        <SectionBlock title="PPSC 2025 Exam Date">
+        <SectionBlock title="PPSC 2026 Exam Date">
           <p style={{ color:"#374151",fontSize:14,lineHeight:1.8,margin:"0 0 16px" }}>
-            PPSC released the official notification announcing the dates of exams. After the announcement, the commission will start accepting applications for the Punjab PCS examinations for 2025.
+            PPSC released the official notification announcing the dates of exams. After the announcement, the commission will start accepting applications for the Punjab PCS examinations for 2026.
           </p>
           <div className="pcs-table-wrap">
             <table style={{ width:"100%",borderCollapse:"collapse",fontSize:13 }}>
@@ -270,12 +270,12 @@ export default function CoachingForPCSExam() {
         </SectionBlock>
 
         {/* ── Vacancy ── */}
-        <SectionBlock title="PPSC 2025 Vacancy">
+        <SectionBlock title="PPSC 2026 Vacancy">
           <p style={{ color:"#374151",fontSize:14,lineHeight:1.8,margin:"0 0 8px" }}>
-            The Punjab Public Service Commission (PPSC) has announced a total of <strong>322 vacancies</strong> for various administrative and departmental positions for the year 2025.
+            The Punjab Public Service Commission (PPSC) has announced a total of <strong>322 vacancies</strong> for various administrative and departmental positions for the year 2026.
           </p>
           <p style={{ color:"#374151",fontSize:14,lineHeight:1.8,margin:"0 0 16px" }}>
-            The number of vacancies to be filled on the basis of PSCSCCE-2025 is given in the table below:
+            The number of vacancies to be filled on the basis of PSCSCCE-2026 is given in the table below:
           </p>
           <div className="pcs-table-wrap">
             <table style={{ width:"100%",borderCollapse:"collapse",fontSize:13 }}>
@@ -294,7 +294,7 @@ export default function CoachingForPCSExam() {
         </SectionBlock>
 
         {/* ── Eligibility ── */}
-        <SectionBlock title="PPSC 2025 Eligibility Criteria">
+        <SectionBlock title="PPSC 2026 Eligibility Criteria">
           <p style={{ color:"#374151",fontSize:14,lineHeight:1.8,margin:"0 0 20px" }}>
             The PPSC has outlined specific eligibility criteria including educational qualifications, age limits, nationality requirements, and other essential guidelines.
           </p>
@@ -453,7 +453,7 @@ export default function CoachingForPCSExam() {
             </table>
           </div>
           <p style={{ color:"#374151",fontSize:14,lineHeight:1.8,margin:"20px 0 0" }}>
-            Meeting the eligibility criteria is the first step for candidates aspiring to embark on a career with the Punjab Government through the PPSC Exam 2025.
+            Meeting the eligibility criteria is the first step for candidates aspiring to embark on a career with the Punjab Government through the PPSC Exam 2026.
           </p>
         </SectionBlock>
 
