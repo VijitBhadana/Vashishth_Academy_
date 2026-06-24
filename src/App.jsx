@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Routes, Route, useNavigate } from "react-router-dom";
 
 import Navbar from "./components/Navbar";
 import SuccessStories from "./components/SuccessStories";
@@ -28,89 +29,66 @@ import MonthlyMagazines from "./components/MonthlyMagazines";
 import MathTopicVideos from "./components/MathTopicVideos";
 import OurGallery from "./components/OurGallery";
 
+function HomePage({ onOpenModal }) {
+  return (
+    <>
+      <HeroCarousel />
+      <CoursesSection onOpenModal={onOpenModal} />
+      <ToppersCoverflow />
+      <StudyMaterials />
+      <QueryFormSection />
+      <Testimonials />
+      <ContactSection />
+    </>
+  );
+}
+
 export default function App() {
   const [modalId, setModalId] = useState(null);
-  const [page, setPage] = useState("home");
-
-  const scrollToContact = () => {
-    document.getElementById("contact-us")?.scrollIntoView({ behavior: "smooth" });
-  };
-
-  const handleNavigate = (sub) => {
-    if (sub === "home") { goHome(); return; }
-
-    const pageMap = {
-      "About Vashishth Academy": "about",
-      "Success Stories":         "success",
-      "Announcement":            "announcement",
-      "Videos":                  "videos",
-      "Coaching for IAS Exam":   "ias",
-      "Coaching for PCS Exam":   "pcs",
-      "Coaching for NDA Exam":   "nda",
-      "Coaching for CDS Exam":   "cds",
-      "Coaching for SSC Exam":   "ssc",
-      "Interview Discussions":   "interview",
-      "General Studies":         "generalstudies",
-      "Reference Books":         "referencebooks",
-      "Current Affairs":         "currentaffairs",
-      "Monthly Magazines":       "magazines",
-      "Math Topic Videos":       "mathvideos",
-      "Our gallery":             "gallery",
-    };
-    const target = pageMap[sub];
-    if (target) {
-      setPage(target);
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    }
-  };
+  const navigate = useNavigate();
 
   const goHome = () => {
-    setPage("home");
+    navigate("/");
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  const renderPage = () => {
-    switch (page) {
-      case "about":          return <AboutPage onBack={goHome} />;
-      case "success":        return <SuccessStories onBack={goHome} />;
-      case "announcement":   return <AnnouncementPage onBack={goHome} />;
-      case "videos":         return <VideosPage onBack={goHome} />;
-      case "ias":            return <CoachingForIASExam />;
-      case "pcs":            return <CoachingForPCSExam />;
-      case "nda":            return <CoachingForNDAExam />;
-      case "cds":            return <CoachingForCDSExam />;
-      case "ssc":            return <CoachingForSSCExam />;
-      case "interview":      return <InterviewDiscussions />;
-      case "generalstudies": return <GeneralStudies />;
-      case "referencebooks": return <ReferenceBooks />;
-      case "currentaffairs": return <CurrentAffairs />;
-      case "magazines":      return <MonthlyMagazines />;
-      case "mathvideos":     return <MathTopicVideos />;
-      case "gallery":        return <OurGallery />;
-      default:
-        return (
-          <>
-            <HeroCarousel />
-            <CoursesSection onOpenModal={setModalId} />
-            <ToppersCoverflow />
-            <StudyMaterials />
-            <QueryFormSection />
-            <Testimonials />
-            <ContactSection />
-            
-            <Modal id={modalId} onClose={() => setModalId(null)} />
-          </>
-        );
+  const scrollToContact = () => {
+    if (window.location.pathname !== "/") {
+      navigate("/");
+      setTimeout(() => {
+        document.getElementById("contact-us")?.scrollIntoView({ behavior: "smooth" });
+      }, 150);
+    } else {
+      document.getElementById("contact-us")?.scrollIntoView({ behavior: "smooth" });
     }
   };
 
   return (
     <div style={{ fontFamily: "'Hind',sans-serif", background: "#f0f4fa", minHeight: "100vh" }}>
-      <Navbar onContact={scrollToContact} onNavigate={handleNavigate} />
-      {renderPage()}
+      <Navbar onContact={scrollToContact} />
+
+      <Routes>
+        <Route path="/" element={<><HomePage onOpenModal={setModalId} /><Modal id={modalId} onClose={() => setModalId(null)} /></>} />
+        <Route path="/about" element={<AboutPage onBack={goHome} />} />
+        <Route path="/success-stories" element={<SuccessStories onBack={goHome} />} />
+        <Route path="/announcement" element={<AnnouncementPage onBack={goHome} />} />
+        <Route path="/videos" element={<VideosPage onBack={goHome} />} />
+        <Route path="/coaching/ias" element={<CoachingForIASExam />} />
+        <Route path="/coaching/pcs" element={<CoachingForPCSExam />} />
+        <Route path="/coaching/nda" element={<CoachingForNDAExam />} />
+        <Route path="/coaching/cds" element={<CoachingForCDSExam />} />
+        <Route path="/coaching/ssc" element={<CoachingForSSCExam />} />
+        <Route path="/interview-discussions" element={<InterviewDiscussions />} />
+        <Route path="/general-studies" element={<GeneralStudies />} />
+        <Route path="/reference-books" element={<ReferenceBooks />} />
+        <Route path="/current-affairs" element={<CurrentAffairs />} />
+        <Route path="/monthly-magazines" element={<MonthlyMagazines />} />
+        <Route path="/math-videos" element={<MathTopicVideos />} />
+        <Route path="/gallery" element={<OurGallery />} />
+      </Routes>
+
       <ScrollTop />
       <Footer />
-
     </div>
   );
 }

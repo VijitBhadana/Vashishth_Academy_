@@ -206,8 +206,15 @@ export default function CoachingForIASExam() {
               </div>
             </div>
 
-            {/* stats card */}
-            <div className="ias-fadeup ias-d3">
+            {/* hero image + stats card */}
+            <div className="ias-fadeup ias-d3" style={{ display: "flex", flexDirection: "column", gap: 20 }}>
+              <div style={{ borderRadius: 16, overflow: "hidden", boxShadow: "0 8px 32px rgba(0,0,0,0.35)", border: "1px solid rgba(255,255,255,0.12)" }}>
+                <img
+                  src="/assets/ias-image 1.png"
+                  alt="IAS Coaching at Vashishth Academy"
+                  style={{ width: "100%", display: "block", objectFit: "cover" }}
+                />
+              </div>
               <div style={{
                 borderRadius: 16, padding: "28px 24px",
                 background: "rgba(255,255,255,0.07)",
@@ -309,6 +316,33 @@ export default function CoachingForIASExam() {
                   fontFamily: "'Hind',sans-serif",
                 }}>Submit Enquiry</button>
               </div>
+            </div>
+          </div>
+        </div>
+
+        {/* IAS Showcase Image */}
+        <div style={{ marginBottom: 56, borderRadius: 20, overflow: "hidden", boxShadow: "0 12px 40px rgba(10,22,40,0.18)", position: "relative" }}>
+          <img
+            src="/assets/ias-image 2.png"
+            alt="IAS Coaching Institute in India"
+            style={{ width: "100%", display: "block", objectFit: "cover", maxHeight: 420 }}
+          />
+          <div style={{
+            position: "absolute", inset: 0,
+            background: "linear-gradient(90deg, rgba(10,22,40,0.55) 0%, transparent 60%)",
+            display: "flex", alignItems: "center", padding: "0 40px",
+          }}>
+            <div>
+              <p style={{ color: "#f4a726", fontSize: 12, fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", margin: "0 0 8px" }}>Vashishth IAS Academy — Ludhiana</p>
+              <h2 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: "2rem", fontWeight: 900, color: "#fff", margin: "0 0 16px", lineHeight: 1.25 }}>
+                Start Your IAS Journey<br />with the Best
+              </h2>
+              <a href="#ias-enquire" style={{
+                display: "inline-block", padding: "10px 24px", borderRadius: 8,
+                background: "#e85d04", color: "#fff", fontWeight: 700,
+                fontSize: 13, textDecoration: "none",
+                boxShadow: "0 4px 14px rgba(232,93,4,0.45)",
+              }}>Enquire Now</a>
             </div>
           </div>
         </div>

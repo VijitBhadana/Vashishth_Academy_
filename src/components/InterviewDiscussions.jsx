@@ -102,8 +102,15 @@ export default function InterviewDiscussions() {
               </div>
             </div>
 
-            {/* stats card */}
-            <div className="int-fadeup int-d3">
+            {/* hero image + stats card */}
+            <div className="int-fadeup int-d3" style={{ display:"flex",flexDirection:"column",gap:20 }}>
+              <div style={{ borderRadius:16,overflow:"hidden",boxShadow:"0 8px 32px rgba(0,0,0,0.35)",border:"1px solid rgba(255,255,255,0.12)" }}>
+                <img
+                  src="/assets/inter-image 1.png"
+                  alt="UPSC Interview Coaching"
+                  style={{ width:"100%",display:"block",objectFit:"cover" }}
+                />
+              </div>
               <div style={{ borderRadius:16,padding:"28px 24px",background:"rgba(255,255,255,0.07)",border:"1px solid rgba(255,255,255,0.13)" }}>
                 <p style={{ color:"#93c5fd",fontSize:11,fontWeight:700,letterSpacing:"0.12em",textTransform:"uppercase",marginBottom:20 }}>UPSC Interview At a Glance</p>
                 <div className="int-stats-grid" style={{ display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:12,marginBottom:20 }}>
@@ -184,6 +191,33 @@ export default function InterviewDiscussions() {
                   Submit Enquiry
                 </button>
               </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Interview Showcase Image */}
+        <div style={{ marginBottom:56,borderRadius:20,overflow:"hidden",boxShadow:"0 12px 40px rgba(10,22,40,0.18)",position:"relative" }}>
+          <img
+            src="/assets/inter-image 2.png"
+            alt="UPSC Personality Test Coaching"
+            style={{ width:"100%",display:"block",objectFit:"cover",maxHeight:420 }}
+          />
+          <div style={{
+            position:"absolute",inset:0,
+            background:"linear-gradient(90deg,rgba(10,22,40,0.65) 0%,transparent 60%)",
+            display:"flex",alignItems:"center",padding:"0 40px",
+          }}>
+            <div>
+              <p style={{ color:"#f4a726",fontSize:12,fontWeight:700,letterSpacing:"0.12em",textTransform:"uppercase",margin:"0 0 8px" }}>Vashishth IAS Academy — Ludhiana</p>
+              <h2 style={{ fontFamily:"'Playfair Display',Georgia,serif",fontSize:"2rem",fontWeight:900,color:"#fff",margin:"0 0 16px",lineHeight:1.25 }}>
+                Master the UPSC<br/>Personality Test
+              </h2>
+              <a href="#int-enquire" style={{
+                display:"inline-block",padding:"10px 24px",borderRadius:8,
+                background:"#e85d04",color:"#fff",fontWeight:700,
+                fontSize:13,textDecoration:"none",
+                boxShadow:"0 4px 14px rgba(232,93,4,0.45)",
+              }}>Enquire Now</a>
             </div>
           </div>
         </div>
